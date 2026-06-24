@@ -65,3 +65,8 @@ section {
     color: #0ea5e9;
     text-decoration: underline;
 }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
