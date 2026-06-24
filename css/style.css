@@ -70,3 +70,6 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
 }
+#contact {
+    padding: 100px 0;
+}
