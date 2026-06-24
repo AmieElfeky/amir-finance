@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Amir Finance | Strategic Financial Intelligence</title>
+    <title>Amir Finance | CFO Advisory</title>
 
     <link rel="stylesheet" href="css/style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
@@ -39,17 +36,14 @@
 <section id="home" class="hero">
     <div class="container">
 
-        <span class="badge">Enterprise Financial Intelligence</span>
-
-        <h1>Build Financial Clarity for Scalable Growth</h1>
+        <h1>Strategic Financial Intelligence</h1>
 
         <p>
-            Transform financial complexity into strategic decisions with CFO-level advisory systems, analytics, and automation.
+            Transform financial complexity into strategic decisions.
         </p>
 
-        <div class="hero-buttons">
+        <div>
             <a href="#services" class="btn">Explore Services</a>
-            <a href="#contact" class="btn" style="background:#1e293b;">Book Call</a>
         </div>
 
     </div>
@@ -59,37 +53,25 @@
 <section id="services">
     <div class="container">
 
-        <h2 class="section-title">Enterprise Advisory Services</h2>
+        <h2>Our Services</h2>
 
         <div class="services-grid">
 
             <div class="card">
                 <h3>CFO Advisory</h3>
-                <p>Strategic financial leadership for decision-making and growth.</p>
+                <p>Strategic financial leadership.</p>
             </div>
 
             <div class="card">
                 <h3>Financial Modeling</h3>
-                <p>Forecasting, valuation, and scenario planning.</p>
+                <p>Forecasting and valuation.</p>
             </div>
 
             <div class="card">
                 <h3>ERP Integration</h3>
-                <p>Connect financial systems for real-time visibility.</p>
+                <p>System automation and reporting.</p>
             </div>
 
-        </div>
-
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about">
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Financial Strategy Meets Technology</h2>
-            <p>We help organizations improve profitability and decision-making.</p>
         </div>
 
     </div>
@@ -99,77 +81,28 @@
 <section id="contact">
     <div class="container" style="text-align:center;">
 
-        <h2 class="section-title">Let’s Build Your Financial Strategy</h2>
+        <h2>Contact Us</h2>
 
-        <p style="max-width:650px; margin:20px auto;">
-            Our advisory team helps you make better financial decisions.
-        </p>
+        <p>Let’s build your financial strategy.</p>
 
-        <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+        <a href="tel:+201015555880" class="btn">Call Now</a>
 
-            <a href="tel:+201015555880" class="btn">Call Now</a>
-
-            <a href="https://wa.me/201015555880" class="btn" style="background:#1e293b;">
-                WhatsApp
-            </a>
-
-        </div>
+        <a href="https://wa.me/201015555880" class="btn" style="background:#1e293b;">
+            WhatsApp
+        </a>
 
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-    <div class="container">
-
-        <p style="text-align:center; opacity:0.6;">
-            © 2026 CFO Advisory. All rights reserved.
-        </p>
-
+<footer>
+    <div class="container" style="text-align:center;">
+        <p>© 2026 CFO Advisory</p>
     </div>
 </footer>
 
-<!-- JS (ONE CLEAN SCRIPT ONLY) -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    // Progress bar
-    window.addEventListener("scroll", () => {
-        const winScroll = document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-
-        const bar = document.getElementById("progress-bar");
-        if (bar) bar.style.width = scrolled + "%";
-    });
-
-    // Scroll spy
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links a");
-
-    window.addEventListener("scroll", () => {
-        let current = "";
-
-        sections.forEach(section => {
-            const top = window.scrollY;
-            const offset = section.offsetTop - 120;
-            const height = section.offsetHeight;
-
-            if (top >= offset && top < offset + height) {
-                current = section.id;
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === "#" + current) {
-                link.classList.add("active");
-            }
-        });
-    });
-
-});
-</script>
+<!-- JS -->
+<script src="main.js"></script>
 
 </body>
 </html>
