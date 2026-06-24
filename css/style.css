@@ -22,3 +22,53 @@ a {
     text-decoration: none;
     transition: 0.2s ease;
 }
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #fff;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+.card {
+    background: linear-gradient(145deg, #111b2e, #16233a);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #1f2a44;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #2f4a7a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: #94a3b8;
+}
+
