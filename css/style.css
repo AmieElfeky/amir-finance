@@ -73,3 +73,52 @@ section {
 #contact {
     padding: 100px 0;
 }
+:root {
+    --bg: #0b1220;
+    --panel: #111b2e;
+    --card: #16233a;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --border: #1f2a44;
+}
+
+body {
+    background: radial-gradient(circle at top, #0f172a, var(--bg));
+    color: var(--text);
+}
+
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: var(--muted);
+}
+
+.card {
+    background: linear-gradient(145deg, var(--panel), var(--card));
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 12px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+a {
+    transition: 0.2s ease;
+}
