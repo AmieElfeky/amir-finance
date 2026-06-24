@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressBar = document.getElementById("progress-bar");
 
     window.addEventListener("scroll", () => {
+
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (progressBar) {
             progressBar.style.width = progress + "%";
         }
+
     });
 
 
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let current = "";
 
         document.querySelectorAll("section").forEach(section => {
+
             const top = window.scrollY;
             const offset = section.offsetTop - 120;
             const height = section.offsetHeight;
@@ -34,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (top >= offset && top < offset + height) {
                 current = section.getAttribute("id");
             }
+
         });
 
         navLinks.forEach(link => {
@@ -48,11 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================
-       3) Reveal Animation (YOUR CODE - FIXED)
+       3) Reveal Animation (Clean)
     ========================== */
     const sections = document.querySelectorAll("section");
 
-    const revealObserver = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
 
@@ -67,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     sections.forEach(section => {
-        revealObserver.observe(section);
+        observer.observe(section);
     });
 
 });
