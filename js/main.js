@@ -1,85 +1,99 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================
-       1) Progress Bar
+       1) Progress Bar (Optimized)
     ========================== */
-    window.addEventListener("scroll", () => {
-        const winScroll = document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById("progress-bar");
 
-        const bar = document.getElementById("progress-bar");
-        if (bar) bar.style.width = scrolled + "%";
+    window.addEventListener("scroll", () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+        const progress = (scrollTop / scrollHeight) * 100;
+
+        if (progressBar) {
+            progressBar.style.width = progress + "%";
+        }
     });
 
 
     /* =========================
-       2) Active Section (Scroll Spy)
+       2) Scroll Spy (Clean Version)
     ========================== */
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-links a");
 
-    window.addEventListener("scroll", () => {
+    const observerOptions = {
+        root: null,
+        threshold: 0.4
+    };
 
-        let currentSection = "";
+    const observer = new IntersectionObserver((entries) => {
 
-        sections.forEach(section => {
-            const top = window.scrollY;
-            const offset = section.offsetTop - 120;
-            const height = section.offsetHeight;
+        entries.forEach(entry => {
 
-            if (top >= offset && top < offset + height) {
-                currentSection = section.getAttribute("id");
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+
+                    if (link.getAttribute("href") === "#" + id) {
+                        link.classList.add("active");
+                    }
+                });
             }
+
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove("active");
+    }, observerOptions);
 
-            if (link.getAttribute("href") === "#" + currentSection) {
-                link.classList.add("active");
-            }
-        });
+    sections.forEach(section => {
+        if (section.id) observer.observe(section);
     });
 
 
     /* =========================
-       3) Smooth Reveal Animation
+       3) Smooth Reveal (Improved)
     ========================== */
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
+
             if (entry.isIntersecting) {
                 entry.target.style.opacity = "1";
                 entry.target.style.transform = "translateY(0)";
             }
+
         });
 
-    }, {
-        threshold: 0.15
-    });
+    }, { threshold: 0.12 });
 
     sections.forEach(section => {
+
         section.style.opacity = "0";
-        section.style.transform = "translateY(25px)";
-        section.style.transition = "0.8s ease";
-        observer.observe(section);
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "0.9s cubic-bezier(0.16, 1, 0.3, 1)";
+
+        revealObserver.observe(section);
     });
 
 
     /* =========================
-       4) Button Micro Interaction
+       4) Button Micro Interaction (Stable)
     ========================== */
     const buttons = document.querySelectorAll(".btn");
 
     buttons.forEach(btn => {
+
         btn.addEventListener("mouseenter", () => {
-            btn.style.transform = "translateY(-3px) scale(1.02)";
+            btn.style.transform = "translateY(-3px) scale(1.03)";
         });
 
         btn.addEventListener("mouseleave", () => {
             btn.style.transform = "translateY(0) scale(1)";
         });
+
     });
 
 });
