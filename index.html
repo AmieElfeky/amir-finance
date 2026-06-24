@@ -585,8 +585,39 @@
         </div>
 
     </footer>
-<script>
     <script>
+      <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+
+                    if (link.getAttribute("href") === "#" + id) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    sections.forEach(sec => {
+        if (sec.id) observer.observe(sec);
+    });
+
+});
+</script>  
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
