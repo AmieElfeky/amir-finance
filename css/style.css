@@ -120,3 +120,56 @@ html {
 .container {
     padding: 0 20px;
 }
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(14px);
+    background: rgba(11, 18, 32, 0.7);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* smooth section reveal feel */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* better button micro-interaction */
+.btn:active {
+    transform: scale(0.98);
+}
