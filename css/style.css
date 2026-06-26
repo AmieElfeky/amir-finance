@@ -303,3 +303,198 @@ opacity:1;
 color:var(--primary);
 
 }
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+
+    min-height:92vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.hero-left h1{
+
+    font-size:68px;
+
+    font-weight:800;
+
+    line-height:1.05;
+
+    margin:25px 0;
+
+}
+
+.hero-left p{
+
+    font-size:19px;
+
+    max-width:650px;
+
+    color:var(--muted);
+
+}
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    background:rgba(59,130,246,.12);
+
+    border:1px solid rgba(59,130,246,.25);
+
+    color:#7fb5ff;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.hero-actions{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-metrics{
+
+    display:flex;
+
+    gap:50px;
+
+    margin-top:70px;
+
+}
+
+.hero-metrics strong{
+
+    display:block;
+
+    font-size:34px;
+
+    color:white;
+
+}
+
+.hero-metrics span{
+
+    color:var(--muted);
+
+}
+/* ==========================================================
+   DASHBOARD CARD
+========================================================== */
+
+.dashboard-card{
+
+    background:
+
+    linear-gradient(
+    180deg,
+    rgba(255,255,255,.05),
+    rgba(255,255,255,.02));
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:0 40px 80px rgba(0,0,0,.45);
+
+}
+
+.dashboard-card h3{
+
+    margin-bottom:35px;
+
+}
+
+.dashboard-line{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.dashboard-line:last-child{
+
+    border:none;
+
+}
+
+.dashboard-line strong{
+
+    color:#4ade80;
+
+}
+/* ==========================================================
+   FLOAT EFFECT
+========================================================== */
+
+.dashboard-card{
+
+    animation:floatCard 6s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
