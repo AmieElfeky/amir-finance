@@ -1,212 +1,168 @@
 /* ==========================================================
    AMIR FINANCE
-   Production Design System v1.0
+   Production CSS v1.0
 ========================================================== */
 
 :root{
 
-    --bg:#08111f;
-    --surface:#101c2f;
-    --surface-2:#16243b;
+--bg:#07111f;
 
-    --primary:#3b82f6;
-    --primary-hover:#2563eb;
+--bg2:#0d1b2f;
 
-    --text:#f8fafc;
-    --muted:#94a3b8;
+--panel:#13233b;
 
-    --border:rgba(255,255,255,.08);
+--panel2:#182c49;
 
-    --radius:18px;
+--primary:#3b82f6;
 
-    --container:1200px;
+--primary2:#2563eb;
 
-    --shadow-sm:0 10px 30px rgba(0,0,0,.25);
-    --shadow-md:0 20px 45px rgba(0,0,0,.35);
-    --shadow-lg:0 30px 70px rgba(0,0,0,.45);
+--text:#ffffff;
+
+--muted:#94a3b8;
+
+--border:rgba(255,255,255,.08);
+
+--radius:18px;
+
+--container:1200px;
+
+--shadow:0 25px 60px rgba(0,0,0,.35);
 
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
 }
 
 html{
 
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 
 }
 
 body{
 
-    font-family:Arial,sans-serif;
+font-family:'Inter',sans-serif;
 
-    background:
-    radial-gradient(circle at top,#12203b 0%,#08111f 65%);
+background:
 
-    color:var(--text);
+radial-gradient(circle at top,#132543 0%,#07111f 65%);
 
-    line-height:1.7;
+color:var(--text);
 
-    -webkit-font-smoothing:antialiased;
+line-height:1.7;
 
-}
-
-img{
-
-    max-width:100%;
-
-    display:block;
-
-}
-
-a{
-
-    text-decoration:none;
-
-    color:inherit;
+-webkit-font-smoothing:antialiased;
 
 }
 
 .container{
 
-    width:min(92%,var(--container));
+width:min(92%,1200px);
 
-    margin:auto;
+margin:auto;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
 
 }
 
 section{
 
-    padding:110px 0;
+padding:110px 0;
 
 }
 
 .section-title{
 
-    text-align:center;
+text-align:center;
 
-    margin-bottom:60px;
+margin-bottom:70px;
+
+}
+
+.section-title span{
+
+display:inline-block;
+
+color:var(--primary);
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+margin-bottom:14px;
+
+text-transform:uppercase;
 
 }
 
 .section-title h2{
 
-    font-size:42px;
+font-size:42px;
 
-    margin-bottom:18px;
+margin-bottom:18px;
 
 }
 
 .section-title p{
 
-    max-width:760px;
+max-width:760px;
 
-    margin:auto;
+margin:auto;
 
-    color:var(--muted);
+color:var(--muted);
 
 }
 
 h1{
 
-    font-size:62px;
+font-size:64px;
 
-    line-height:1.05;
+line-height:1.05;
+
+margin-bottom:25px;
 
 }
 
 h2{
 
-    font-size:42px;
+font-size:42px;
 
 }
 
 h3{
 
-    font-size:22px;
+font-size:22px;
+
+margin-bottom:15px;
 
 }
 
 p{
 
-    color:var(--muted);
-
-}
-
-.btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:15px 28px;
-
-    border-radius:14px;
-
-    background:linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-hover));
-
-    color:#fff;
-
-    font-weight:700;
-
-    transition:.3s;
-
-    box-shadow:var(--shadow-sm);
-
-}
-
-.btn:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:var(--shadow-md);
-
-}
-
-.card{
-
-    background:linear-gradient(
-    180deg,
-    var(--surface),
-    var(--surface-2));
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius);
-
-    padding:32px;
-
-    transition:.35s;
-
-    box-shadow:var(--shadow-sm);
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:var(--shadow-lg);
-
-    border-color:#2f4a7a;
-
-}
-
-.services-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
+color:var(--muted);
 
 }
