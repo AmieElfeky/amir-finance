@@ -166,3 +166,55 @@ p{
 color:var(--muted);
 
 }
+/* ===============================
+Buttons
+================================ */
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:15px 28px;
+
+border-radius:14px;
+
+background:
+
+linear-gradient(
+135deg,
+var(--primary),
+var(--primary2));
+
+color:white;
+
+font-weight:700;
+
+transition:.3s;
+
+box-shadow:var(--shadow);
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.btn-outline{
+
+background:transparent;
+
+border:1px solid var(--border);
+
+}
+
+.btn-outline:hover{
+
+background:rgba(255,255,255,.05);
+
+}
