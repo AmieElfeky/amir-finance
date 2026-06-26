@@ -637,3 +637,130 @@ transform:translateY(0px);
     font-size:14px;
 
 }
+/* ==========================================================
+   EXECUTIVE DASHBOARD
+========================================================== */
+
+.hero-dashboard{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.dashboard-window{
+
+    width:100%;
+
+    max-width:480px;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    box-shadow:0 40px 80px rgba(0,0,0,.45);
+
+    transition:.35s ease;
+
+}
+
+.dashboard-window:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.dashboard-title{
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.dashboard-status{
+
+    color:#22c55e;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.dashboard-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.dashboard-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:14px;
+
+    transition:.25s ease;
+
+}
+
+.dashboard-item:hover{
+
+    background:rgba(59,130,246,.10);
+
+    border-color:rgba(59,130,246,.35);
+
+    transform:translateX(8px);
+
+}
+
+.dashboard-item span{
+
+    color:var(--muted);
+
+    font-size:15px;
+
+}
+
+.dashboard-item strong{
+
+    font-size:18px;
+
+    color:#ffffff;
+
+}
