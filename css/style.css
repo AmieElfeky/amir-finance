@@ -218,3 +218,88 @@ border:1px solid var(--border);
 background:rgba(255,255,255,.05);
 
 }
+/* ===============================
+Navbar
+================================ */
+
+.navbar{
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+backdrop-filter:blur(14px);
+
+background:rgba(7,17,31,.75);
+
+border-bottom:1px solid var(--border);
+
+}
+
+.nav-inner{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 0;
+
+}
+
+.logo{
+
+display:flex;
+
+gap:12px;
+
+align-items:center;
+
+font-weight:700;
+
+}
+
+.logo small{
+
+display:block;
+
+color:var(--muted);
+
+font-size:12px;
+
+}
+
+.logo-mark{
+
+color:var(--primary);
+
+font-size:22px;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:28px;
+
+}
+
+.nav-links a{
+
+opacity:.8;
+
+transition:.25s;
+
+}
+
+.nav-links a:hover{
+
+opacity:1;
+
+color:var(--primary);
+
+}
