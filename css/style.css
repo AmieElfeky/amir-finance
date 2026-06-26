@@ -1,33 +1,212 @@
-:root {
-    --bg: #0b1220;
-    --panel: rgba(255,255,255,0.03);
-    --text: #e5e7eb;
-    --muted: #94a3b8;
+/* ==========================================================
+   AMIR FINANCE
+   Production Design System v1.0
+========================================================== */
 
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
+:root{
 
-    --border: rgba(255,255,255,0.08);
+    --bg:#08111f;
+    --surface:#101c2f;
+    --surface-2:#16243b;
 
-    --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    --primary:#3b82f6;
+    --primary-hover:#2563eb;
+
+    --text:#f8fafc;
+    --muted:#94a3b8;
+
+    --border:rgba(255,255,255,.08);
+
+    --radius:18px;
+
+    --container:1200px;
+
+    --shadow-sm:0 10px 30px rgba(0,0,0,.25);
+    --shadow-md:0 20px 45px rgba(0,0,0,.35);
+    --shadow-lg:0 30px 70px rgba(0,0,0,.45);
+
 }
 
-/* BASE BACKGROUND SYSTEM */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: var(--text);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    /* 🔥 Stripe / Notion style background */
-    background: radial-gradient(
-        circle at top,
-        #0f172a 0%,
-        var(--bg) 60%,
-        #070b14 100%
-    );
+html{
 
-    line-height: 1.6;
+    scroll-behavior:smooth;
 
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+}
+
+body{
+
+    font-family:Arial,sans-serif;
+
+    background:
+    radial-gradient(circle at top,#12203b 0%,#08111f 65%);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+.container{
+
+    width:min(92%,var(--container));
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:110px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+
+    margin-bottom:18px;
+
+}
+
+.section-title p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+}
+
+h1{
+
+    font-size:62px;
+
+    line-height:1.05;
+
+}
+
+h2{
+
+    font-size:42px;
+
+}
+
+h3{
+
+    font-size:22px;
+
+}
+
+p{
+
+    color:var(--muted);
+
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 28px;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-hover));
+
+    color:#fff;
+
+    font-weight:700;
+
+    transition:.3s;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.card{
+
+    background:linear-gradient(
+    180deg,
+    var(--surface),
+    var(--surface-2));
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:32px;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+    border-color:#2f4a7a;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
 }
