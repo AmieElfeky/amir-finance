@@ -720,3 +720,144 @@ img{
     }
 
 }
+/* ==========================================================
+   HERO METRICS
+========================================================== */
+
+.metric{
+
+    min-width:140px;
+
+    padding:18px 22px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    backdrop-filter:blur(16px);
+
+    transition:.35s ease;
+
+}
+
+.metric:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(59,130,246,.35);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+
+}
+
+.metric h2{
+
+    font-size:2rem;
+
+    color:#fff;
+
+    margin-bottom:6px;
+
+}
+
+.metric span{
+
+    color:var(--muted);
+
+    font-size:.88rem;
+
+}
+
+/* ==========================================================
+   TRUSTED INDUSTRIES
+========================================================== */
+
+.trusted{
+
+    margin-top:50px;
+
+}
+
+.trusted small{
+
+    display:block;
+
+    color:var(--muted);
+
+    margin-bottom:16px;
+
+    letter-spacing:.5px;
+
+}
+
+.trusted-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+}
+
+.trusted-list span{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    color:#d7e2f0;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================================
+   EXECUTIVE DASHBOARD
+========================================================== */
+
+.hero-dashboard{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+.dashboard-window{
+
+    width:100%;
+
+    max-width:520px;
+
+    padding:30px;
+
+    border-radius:28px;
+
+    background:rgba(12,20,36,.72);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(24px);
+
+    box-shadow:
+
+        0 30px 80px rgba(0,0,0,.45),
+
+        inset 0 1px rgba(255,255,255,.06);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
