@@ -1438,3 +1438,84 @@ img{
     }
 
 }
+/* ============================= */
+/* Contact Section Modern Design */
+/* ============================= */
+.contact.modern-contact {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 60px 20px;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.glass-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.glass-form input,
+.glass-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.glass-form input:focus,
+.glass-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #38bdf8;
+}
+
+/* Animated Button */
+.btn-animated {
+    background: linear-gradient(90deg, #2563eb, #38bdf8);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-animated:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #38bdf8;
+}
+
+/* ============================= */
+/* Footer Modern Design */
+/* ============================= */
+.footer.modern-footer {
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links a,
+.footer-social a {
+    color: #38bdf8;
+    margin-right: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #fff;
+}
