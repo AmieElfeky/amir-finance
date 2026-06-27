@@ -1519,3 +1519,33 @@ img{
 .footer-social a:hover {
     color: #fff;
 }
+/* Footer Styling */
+.footer {
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links a,
+.footer-social a {
+    color: #38bdf8;
+    margin-right: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #fff;
+}
