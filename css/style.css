@@ -246,4 +246,9 @@ img { max-width: 100%; display: block; }
   color: #38bdf8; margin-right: 12px; text-decoration: none; transition: color 0.3s ease;
 }
 .footer-links a:hover, .footer-social a:hover { color: #fff; }
-.footer-bottom { margin-top: 20px; text-align: center; font-size: .9rem; color: var(--muted); }
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;   /* يجعل النص في المنتصف */
+  font-size: .9rem;
+  color: var(--muted);
+}
