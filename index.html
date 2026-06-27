@@ -202,82 +202,133 @@
         </div>
 
         <!-- ================= Right Dashboard ================= -->
+<div class="hero-dashboard">
 
-        <div class="hero-dashboard">
-                        <div class="dashboard-window">
+    <div class="dashboard-window">
 
-                <div class="dashboard-header">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
 
-                    <div class="dashboard-title">
-                        Executive Dashboard
-                    </div>
+            <div class="dashboard-title">
+                Executive Financial Dashboard
+            </div>
 
-                    <div class="dashboard-status">
+            <div class="dashboard-status">
+                <span class="status-dot"></span>
+                Live Analytics
+            </div>
 
-                        <span class="status-dot"></span>
+        </div>
 
-                        Live Data
+        <!-- Main KPI -->
+        <div class="dashboard-kpi">
 
-                    </div>
+            <small>Revenue Growth</small>
 
-                </div>
+            <h2>+24.8%</h2>
 
-                <div class="dashboard-body">
+            <span>Quarter over Quarter</span>
 
-                    <div class="dashboard-card revenue">
+        </div>
 
-                        <small>Revenue Growth</small>
+        <!-- Performance Chart -->
 
-                        <h3>+24.8%</h3>
+        <div class="dashboard-chart">
 
-                        <span>Quarter over Quarter</span>
+            <svg class="chart-svg"
+                 viewBox="0 0 420 170"
+                 preserveAspectRatio="none">
 
-                    </div>
+                <defs>
 
-                    <div class="chart-area">
+                    <linearGradient id="chartGradient"
+                                    x1="0%"
+                                    y1="0%"
+                                    x2="100%"
+                                    y2="0%">
 
-                        <div class="chart-line"></div>
+                        <stop offset="0%" stop-color="#38BDF8"/>
 
-                        <div class="chart-glow"></div>
+                        <stop offset="100%" stop-color="#2563EB"/>
 
-                    </div>
+                    </linearGradient>
 
-                    <div class="dashboard-grid">
+                </defs>
 
-                        <div class="dashboard-item">
+                <path class="chart-grid"
+                      d="M0 150 H420"
+                      stroke="rgba(255,255,255,.08)"
+                      fill="none"/>
 
-                            <span>Cash Flow</span>
+                <path class="chart-line"
 
-                            <strong>Healthy</strong>
+                      d="M10 145
+                         L55 130
+                         L100 136
+                         L145 105
+                         L190 112
+                         L235 76
+                         L280 84
+                         L325 52
+                         L370 36
+                         L410 20"
 
-                        </div>
+                      fill="none"
 
-                        <div class="dashboard-item">
+                      stroke="url(#chartGradient)"
 
-                            <span>Forecast</span>
+                      stroke-width="4"
 
-                            <strong>Positive</strong>
+                      stroke-linecap="round"
 
-                        </div>
+                      stroke-linejoin="round"/>
 
-                        <div class="dashboard-item">
+            </svg>
 
-                            <span>EBITDA</span>
+        </div>
 
-                            <strong>31.4%</strong>
+        <!-- KPI GRID -->
 
-                        </div>
+        <div class="dashboard-cards">
 
-                        <div class="dashboard-item">
+            <div class="dashboard-card">
 
-                            <span>Risk Score</span>
+                <small>Cash Flow</small>
 
-                            <strong>Low</strong>
+                <strong>Healthy</strong>
 
-                        </div>
+            </div>
 
-                    </div>
+            <div class="dashboard-card">
 
+                <small>EBITDA</small>
+
+                <strong>31.4%</strong>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <small>Forecast</small>
+
+                <strong>Positive</strong>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <small>AI Confidence</small>
+
+                <strong>98%</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    
                     <div class="dashboard-footer">
 
                         <div class="footer-item">
