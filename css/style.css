@@ -991,3 +991,89 @@ img{
 
     opacity:.5;
 }
+/* ==========================================================
+   DASHBOARD PREMIUM V2
+========================================================== */
+
+.dashboard-window{
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(145deg,
+    rgba(18,32,58,.96),
+    rgba(8,18,36,.92));
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    padding:34px;
+
+    box-shadow:
+    0 40px 90px rgba(0,0,0,.55),
+    0 0 60px rgba(37,99,235,.12);
+
+    transition:.45s;
+}
+
+.dashboard-window:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 60px 110px rgba(0,0,0,.65),
+    0 0 80px rgba(59,130,246,.18);
+
+}
+
+.dashboard-window::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-140px;
+    right:-120px;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(59,130,246,.28),
+    transparent 70%);
+
+    filter:blur(40px);
+
+    pointer-events:none;
+
+}
+
+.dashboard-window::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-100px;
+    bottom:-100px;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(6,182,212,.20),
+    transparent 70%);
+
+    filter:blur(50px);
+
+    pointer-events:none;
+
+}
