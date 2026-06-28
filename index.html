@@ -1,138 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amir Finance | Executive Financial Intelligence</title>
-  <meta name="description" content="Executive Financial Intelligence Platform delivering CFO Advisory, ERP Consulting, Business Intelligence, Financial Modeling and AI-powered decision support.">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amir Finance | Executive Financial Intelligence &amp; CFO Advisory</title>
+<meta name="description" content="CFO Advisory, ERP Integration, Financial Modeling and AI-powered Business Intelligence for executive teams who need finance to drive strategy, not just report it.">
+<link rel="canonical" href="https://amirfinance.example.com/">
+ 
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amir Finance | Executive Financial Intelligence">
+<meta property="og:description" content="CFO Advisory, ERP Integration, Financial Modeling and AI-powered Business Intelligence for executive decision-making.">
+<meta property="og:image" content="https://amirfinance.example.com/assets/og-cover.jpg">
+<meta property="og:url" content="https://amirfinance.example.com/">
+<meta name="twitter:card" content="summary_large_image">
+ 
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230B1420'/%3E%3Cpath d='M32 14 50 46H14Z' fill='%23C9A227'/%3E%3C/svg%3E">
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Amir ElFeky Accounting & Audit Office",
+  "alternateName": "Amir Finance",
+  "description": "Executive Financial Intelligence, CFO Advisory, ERP Consulting, Business Intelligence and Financial Modeling.",
+  "url": "https://amirfinance.example.com/",
+  "email": "amir.elfeky.finance@outlook.com",
+  "sameAs": ["https://www.linkedin.com/in/amirelfeky1978/"],
+  "areaServed": "Worldwide",
+  "founder": { "@type": "Person", "name": "Amir ElFeky" }
+}
+</script>
+ 
+<style>
+  :root{
+    --ink:#0B1420;
+    --ink-soft:#142235;
+    --paper:#F7F5EF;
+    --paper-dim:#EAE6DA;
+    --line: rgba(247,245,239,0.14);
+    --line-dark: rgba(11,20,32,0.12);
+    --gold:#C9A227;
+    --gold-soft:#E4C766;
+    --ledger-green:#3C7A5E;
+    --ledger-red:#9A4B3F;
+    --text-on-ink:#EDEAE0;
+    --text-on-ink-dim:#A9B2C2;
+    --text-on-paper:#1B2434;
+    --text-on-paper-dim:#5B6577;
+    --radius:2px;
+    --display: "Fraunces", serif;
+    --body: "Public Sans", -apple-system, Segoe UI, sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+    --maxw: 1180px;
+  }
+ 
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+ 
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text-on-ink);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+ 
+  a{ color:inherit; }
+  .container{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+ 
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--gold); color:var(--ink); padding:10px 16px;
+    font-family:var(--body); font-weight:600; z-index:200; border-radius:var(--radius);
+  }
+  .skip-link:focus{ left:12px; top:12px; }
+ 
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+ 
+  h1,h2,h3,h4{ font-family:var(--display); font-weight:600; line-height:1.12; margin:0; color:var(--text-on-ink); letter-spacing:-0.01em; }
+  .on-paper h1, .on-paper h2, .on-paper h3, .on-paper h4{ color:var(--text-on-paper); }
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--gold-soft); display:inline-flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--gold-soft); display:inline-block; }
+  .on-paper .eyebrow{ color:var(--ledger-green); }
+  .on-paper .eyebrow::before{ background:var(--ledger-green); }
+ 
+  .ledger-rule{ border:none; border-top:1px solid var(--line); margin:0; }
+  .on-paper .ledger-rule{ border-top:1px solid var(--line-dark); }
+ 
+  /* ===== NAVBAR ===== */
+  .navbar{
+    position:sticky; top:0; z-index:100;
+    background:rgba(11,20,32,0.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-container{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; gap:20px; }
+  .logo{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .logo-mark{
+    width:34px; height:34px; border:1px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); color:var(--gold); font-size:16px;
+  }
+  .logo-text{ display:flex; flex-direction:column; line-height:1.15; }
+  .logo-text strong{ font-family:var(--display); font-size:15px; letter-spacing:0.04em; }
+  .logo-text span{ font-family:var(--mono); font-size:10px; color:var(--text-on-ink-dim); letter-spacing:0.06em; }
+ 
+  .navigation{ display:flex; gap:28px; }
+  .navigation a{
+    text-decoration:none; font-size:14px; color:var(--text-on-ink-dim);
+    font-weight:500; position:relative; padding:6px 0;
+  }
+  .navigation a:hover{ color:var(--text-on-ink); }
+  .navigation a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--gold); transform:scaleX(0); transition:transform .25s ease;
+  }
+  .navigation a:hover::after{ transform:scaleX(1); }
+ 
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--gold); color:var(--ink); text-decoration:none;
+    padding:11px 22px; font-weight:600; font-size:14px; border:1px solid var(--gold);
+    border-radius:var(--radius); cursor:pointer; transition:transform .2s ease, background .2s ease;
+  }
+  .btn:hover{ background:var(--gold-soft); transform:translateY(-1px); }
+  .btn-outline{ background:transparent; color:var(--text-on-ink); border:1px solid var(--line); }
+  .btn-outline:hover{ background:rgba(255,255,255,0.05); border-color:var(--gold); }
+  .nav-cta{ display:inline-flex; }
+ 
+  .nav-toggle{ display:none; background:none; border:1px solid var(--line); color:var(--text-on-ink); padding:8px 10px; border-radius:var(--radius); }
+ 
+  /* ===== HERO ===== */
+  .hero{ padding:96px 0 80px; position:relative; overflow:hidden; }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(transparent 0 39px, var(--line) 39px 40px);
+    opacity:.5; pointer-events:none;
+  }
+  .hero-grid{ position:relative; display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center; }
+  .hero-badge{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--gold-soft); border:1px solid var(--line); padding:6px 12px; border-radius:999px; display:inline-block; margin-bottom:24px;
+  }
+  .hero h1{ font-size:clamp(34px,4.6vw,54px); margin-bottom:22px; }
+  .gradient-text{ color:var(--gold-soft); }
+  .hero-description{ font-size:17px; color:var(--text-on-ink-dim); max-width:520px; margin-bottom:34px; }
+  .hero-buttons{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:48px; }
+  .hero-metrics{ display:flex; gap:36px; flex-wrap:wrap; }
+  .metric h2{ font-family:var(--mono); font-size:30px; color:var(--gold-soft); margin-bottom:4px; font-weight:600; }
+  .metric span{ font-size:12px; color:var(--text-on-ink-dim); letter-spacing:0.04em; }
+ 
+  /* ledger panel — signature element */
+  .ledger-panel{
+    background:var(--paper); color:var(--text-on-paper); border-radius:var(--radius);
+    border:1px solid var(--line-dark); box-shadow:0 30px 60px -20px rgba(0,0,0,0.45);
+  }
+  .ledger-head{ display:flex; justify-content:space-between; align-items:baseline; padding:20px 24px; border-bottom:1px solid var(--line-dark); }
+  .ledger-head h3{ font-size:15px; letter-spacing:0.03em; }
+  .ledger-head span{ font-family:var(--mono); font-size:11px; color:var(--text-on-paper-dim); }
+  .ledger-rows{ padding:6px 0; }
+  .ledger-row{
+    display:grid; grid-template-columns:1fr auto auto; gap:14px; align-items:center;
+    padding:13px 24px; border-bottom:1px solid var(--line-dark); font-size:13.5px;
+  }
+  .ledger-row:last-child{ border-bottom:none; }
+  .ledger-row .label{ color:var(--text-on-paper); font-weight:500; }
+  .ledger-row .sub{ display:block; font-size:11px; color:var(--text-on-paper-dim); margin-top:2px; }
+  .ledger-row .value{ font-family:var(--mono); font-weight:600; font-size:14px; text-align:right; min-width:74px; }
+  .ledger-row .delta{ font-family:var(--mono); font-size:11px; text-align:right; padding:3px 8px; border-radius:999px; }
+  .delta.up{ color:var(--ledger-green); background:rgba(60,122,94,0.12); }
+  .delta.watch{ color:var(--ledger-red); background:rgba(154,75,63,0.12); }
+  .ledger-foot{ display:flex; justify-content:space-between; padding:16px 24px; font-family:var(--mono); font-size:11px; color:var(--text-on-paper-dim); border-top:1px solid var(--line-dark); }
+ 
+  /* ===== SECTION SHELL ===== */
+  section{ padding:88px 0; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(26px,3.2vw,38px); margin-top:4px; }
+  .section-head p{ color:var(--text-on-ink-dim); margin-top:16px; font-size:16px; }
+  .on-paper .section-head p{ color:var(--text-on-paper-dim); }
+ 
+  /* ===== STORY ===== */
+  .executive-story{ background:var(--ink-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .story-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; }
+  .story-grid p{ color:var(--text-on-ink-dim); font-size:16px; }
+  .story-cards{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); }
+  .story-card{ background:var(--ink-soft); padding:26px; }
+  .story-card h3{ font-size:16px; margin-bottom:8px; }
+  .story-card p{ font-size:14px; color:var(--text-on-ink-dim); margin:0; }
+  .timeline{ list-style:none; margin:0; padding:0; grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:0; }
+  .timeline li{
+    flex:1 1 200px; padding:18px 22px; border-right:1px solid var(--line); font-size:13px; color:var(--text-on-ink-dim); position:relative;
+  }
+  .timeline li:last-child{ border-right:none; }
+  .timeline li strong{ display:block; color:var(--text-on-ink); font-family:var(--mono); font-size:12px; letter-spacing:0.04em; margin-bottom:6px; }
+ 
+  /* ===== SERVICES ===== */
+  .services{ background:var(--paper); color:var(--text-on-paper); }
+  .service-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); }
+  .service-card{ background:var(--paper); padding:34px 28px; transition:background .2s ease; }
+  .service-card:hover{ background:#FBFAF6; }
+  .service-num{ font-family:var(--mono); font-size:12px; color:var(--ledger-green); margin-bottom:18px; display:block; }
+  .service-card h3{ font-size:18px; margin-bottom:10px; }
+  .service-card p{ font-size:14px; color:var(--text-on-paper-dim); margin:0; }
+ 
+  /* ===== DASHBOARD / PLATFORM ===== */
+  .platform-grid{ display:grid; grid-template-columns:1fr 1fr; gap:54px; align-items:start; }
+  .kpi-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .kpi-card{ border:1px solid var(--line); padding:20px; border-radius:var(--radius); }
+  .kpi-card span.label{ font-family:var(--mono); font-size:11px; color:var(--text-on-ink-dim); text-transform:uppercase; letter-spacing:0.06em; }
+  .kpi-card .num{ font-family:var(--mono); font-size:26px; color:var(--gold-soft); margin:10px 0 6px; font-weight:600; }
+  .kpi-card .bar{ height:4px; background:var(--line); border-radius:99px; overflow:hidden; }
+  .kpi-card .bar span{ display:block; height:100%; background:var(--gold); }
+  .platform-list{ list-style:none; margin:24px 0 0; padding:0; }
+  .platform-list li{ display:flex; gap:14px; padding:14px 0; border-top:1px solid var(--line); font-size:14.5px; color:var(--text-on-ink-dim); }
+  .platform-list li:first-child{ border-top:none; }
+  .platform-list li::before{ content:"—"; color:var(--gold-soft); flex-shrink:0; }
+ 
+  /* ===== PROCESS ===== */
+  .process{ background:var(--ink-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .process-rows{ border-top:1px solid var(--line); }
+  .process-row{ display:grid; grid-template-columns:90px 1fr 1.4fr; gap:28px; padding:30px 0; border-bottom:1px solid var(--line); align-items:start; }
+  .process-row .pnum{ font-family:var(--mono); font-size:30px; color:var(--gold-soft); font-weight:600; }
+  .process-row h3{ font-size:18px; }
+  .process-row p{ margin:10px 0 0; color:var(--text-on-ink-dim); font-size:14.5px; }
+ 
+  /* ===== TESTIMONIALS ===== */
+  .testimonials{ background:var(--paper); color:var(--text-on-paper); }
+  .testimonial-list{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); margin-bottom:1px; }
+  .testimonial-card{ background:var(--paper); padding:30px 26px; }
+  .testimonial-card p{ font-family:var(--display); font-size:17px; font-style:italic; color:var(--text-on-paper); margin:0 0 18px; line-height:1.45; }
+  .testimonial-card strong{ font-family:var(--mono); font-size:12px; color:var(--text-on-paper-dim); font-weight:500; letter-spacing:0.02em; }
+  .case-studies{ border:1px solid var(--line-dark); border-top:none; padding:28px 26px; }
+  .case-studies h3{ font-size:14px; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.08em; color:var(--ledger-green); margin-bottom:14px; }
+  .case-studies ul{ margin:0; padding:0; list-style:none; display:grid; gap:10px; }
+  .case-studies li{ font-size:14.5px; padding-left:18px; position:relative; }
+  .case-studies li::before{ content:"›"; position:absolute; left:0; color:var(--ledger-green); }
+ 
+  /* ===== CONTACT ===== */
+  .contact{ position:relative; }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+  .contact-info{ margin-top:28px; display:grid; gap:14px; font-size:14.5px; }
+  .contact-info p{ margin:0; color:var(--text-on-ink-dim); }
+  .contact-info a{ color:var(--text-on-ink); text-decoration:none; border-bottom:1px solid var(--line); }
+  .contact-info a:hover{ border-color:var(--gold); }
+ 
+  .contact-form{ display:grid; gap:18px; }
+  .form-group{ display:grid; gap:8px; }
+  .form-group label{ font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-on-ink-dim); }
+  .form-group input, .form-group textarea{
+    background:transparent; border:1px solid var(--line); color:var(--text-on-ink);
+    padding:13px 14px; font-family:var(--body); font-size:14.5px; border-radius:var(--radius); resize:vertical;
+  }
+  .form-group input:focus, .form-group textarea:focus{ border-color:var(--gold); }
+  .form-group input::placeholder, .form-group textarea::placeholder{ color:var(--text-on-ink-dim); opacity:.7; }
+  .form-note{ font-size:12px; color:var(--text-on-ink-dim); margin:0; }
+  .form-status{ font-size:13.5px; padding:10px 0; min-height:1px; }
+  .form-status.ok{ color:var(--ledger-green); }
+  .form-status.err{ color:var(--ledger-red); }
+ 
+  /* ===== FOOTER ===== */
+  .footer{ background:var(--ink-soft); border-top:1px solid var(--line); padding:56px 0 28px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding-bottom:36px; }
+  .footer-brand h3{ font-size:17px; margin-bottom:8px; }
+  .footer-brand p{ color:var(--text-on-ink-dim); font-size:13.5px; margin:0; }
+  .footer-links, .footer-social{ display:flex; flex-direction:column; gap:10px; font-size:13.5px; }
+  .footer-links a, .footer-social a{ text-decoration:none; color:var(--text-on-ink-dim); }
+  .footer-links a:hover, .footer-social a:hover{ color:var(--gold-soft); }
+  .footer-bottom{ border-top:1px solid var(--line); padding-top:22px; font-size:12px; color:var(--text-on-ink-dim); text-align:center; }
+ 
+  @media (max-width: 900px){
+    .navigation{ display:none; }
+    .nav-toggle{ display:inline-flex; }
+    .hero-grid, .story-grid, .platform-grid, .contact-grid{ grid-template-columns:1fr; }
+    .service-grid{ grid-template-columns:1fr 1fr; }
+    .testimonial-list{ grid-template-columns:1fr; }
+    .process-row{ grid-template-columns:50px 1fr; }
+    .process-row p{ grid-column:1 / -1; }
+    .footer-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 600px){
+    .service-grid{ grid-template-columns:1fr; }
+    .kpi-grid{ grid-template-columns:1fr; }
+    .hero-metrics{ gap:24px; }
+  }
+</style>
 </head>
 <body>
+ 
+<a href="#main" class="skip-link">Skip to main content</a>
+ 
 <header class="navbar">
   <div class="container nav-container">
-    <a href="#home" class="logo">
-      <div class="logo-mark">▲</div>
+    <a href="#home" class="logo" aria-label="Amir Finance home">
+      <div class="logo-mark" aria-hidden="true">▲</div>
       <div class="logo-text">
         <strong>AMIR FINANCE</strong>
-        <span>Executive Financial Intelligence</span>
+        <span>EXECUTIVE FINANCIAL INTELLIGENCE</span>
       </div>
     </a>
-    <nav class="navigation">
-      <a href="#home">🏠 Home</a>
-      <a href="#services">📊 Solutions</a>
-      <a href="#dashboard">⚙️ Platform</a>
-      <a href="#process">🔄 Process</a>
-      <a href="#contact">📩 Contact</a>
-    </nav>
-    <a href="#contact" class="btn">Book Consultation</a>
-  </div>
-</header>
-<section id="home" class="hero">
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <span class="hero-badge">Enterprise Financial Intelligence Platform</span>
-      <h1>Transform Financial Complexity <span class="gradient-text">Into Executive Decisions</span></h1>
-      <p class="hero-description">
-        Empower your executive team with CFO Advisory, Financial Modeling, ERP Integration and AI-powered business intelligence designed for sustainable enterprise growth.
-      </p>
-      <div class="hero-buttons">
-        <a href="#services" class="btn">Explore Solutions</a>
-        <a href="#contact" class="btn btn-outline">Book Consultation</a>
-        <a href="docs/Amir-Finance-Executive-Profile.pdf" class="btn">Download Executive Profile</a>
-      </div>
-      <div class="hero-metrics">
-        <div class="metric"><h2>250+</h2><span>Enterprise Projects</span></div>
-        <div class="metric"><h2>98%</h2><span>Client Satisfaction</span></div>
-        <div class="metric"><h2>15+</h2><span>Years Experience</span></div>
-      </div>
-    </div>
-    <div class="hero-dashboard">
-      ... الكود الخاص بالـ Dashboard ...
-    </div>
-  </div>
-</section>
-<section class="executive-story">
-  <div class="container">
-    <div class="story-intro">
-      <span class="section-tag">Executive Perspective</span>
-      <h2>Finance Should Drive Strategy, Not Just Report Numbers.</h2>
-      <p>I help business owners and executive teams transform financial data into strategic decisions by combining CFO leadership, ERP transformation, business intelligence, financial modeling and AI-driven analytics.</p>
-    </div>
-    <div class="story-highlights">
-      <div class="story-card"><h3>Strategic CFO</h3><p>Turning financial information into executive decisions that accelerate profitable growth.</p></div>
-      <div class="story-card"><h3>Digital Transformation</h3><p>ERP implementation, automation and business intelligence for scalable organizations.</p></div>
-      <div class="story-card"><h3>AI Financial Intelligence</h3><p>Building intelligent finance platforms that improve forecasting, visibility and executive decision-making.</p></div>
-      <div class="story-card"><h3>Executive Timeline</h3>
-        <ul>
-          <li>Junior Accountant → mastering fundamentals</li>
-          <li>Senior Auditor → leading compliance projects</li>
-          <li>Finance Manager → driving ERP transformation</li>
-          <li>CFO Advisor → delivering strategic financial intelligence</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="testimonials">
-  <div class="container">
-    <span class="section-tag">Trusted Voices</span>
-    <h2>What Executives & Clients Say</h2>
-    <div class="testimonial-list">
-      <div class="testimonial-card"><p>"Amir’s CFO advisory transformed our financial reporting into a strategic tool."</p><strong>CEO – Manufacturing Group</strong></div>
-      <div class="testimonial-card"><p>"The ERP integration project streamlined our operations and gave us real-time visibility."</p><strong>COO – Construction & Infrastructure</strong></div>
-      <div class="testimonial-card"><p>"His AI-driven forecasting improved our accuracy to 98%."</p><strong>CFO – Technology Firm</strong></div>
-    </div>
-    <div class="case-studies">
-      <h3>Case Studies</h3>
-      <ul>
-        <li>Restructuring a distressed retail chain into profitability</li>
-        <li>ERP transformation for a regional construction company</li>
-        <li>AI-powered forecasting model for a healthcare provider</li>
-      </ul>
-    </div>
-  </div>
-</section>
-<section id="contact" class="contact modern-contact">
-  <div class="container">
-    <span class="section-tag">Get In Touch</span>
-    <h2>Book Your Executive Consultation</h2>
-    <p>Whether you need CFO advisory, audit services, ERP transformation, or AI-powered financial intelligence, let’s drive enterprise growth.</p>
-    <form class="contact-form glass-form">
-      <div class="form-group"><label for="name">👤 Full Name</label><input type="text" id="name" placeholder="Enter your name" required></div>
-      <div class="form-group"><label for="email">📧 Business Email</label><input type="email" id="email" placeholder="Enter your email" required></div>
-      <div class="form-group"><label for="message">📝 Message</label><textarea id="message" rows="5" placeholder="Tell me about your needs" required></textarea></div>
-      <button type="submit" class="btn btn-animated">Send Request</button>
-    </form>
-    <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:amir.elfeky.finance@outlook.com">amir.elfeky.finance@outlook.com</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/201015555880" target="_blank">01015555880</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/amirelfeky1978/" target="_blank">linkedin.com/in/amirelfeky1978/</a></p>
-    </div>
-  </div>
-</section>
-<footer class="footer modern-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <h3>Amir ElFeky Accounting & Audit Office</h3>
-      <p>Executive Financial Intelligence & CFO Advisory</p>
-    </div>
-    <div class="footer-links">
+    <nav class="navigation" aria-label="Primary">
       <a href="#home">Home</a>
       <a href="#services">Solutions</a>
       <a href="#dashboard">Platform</a>
       <a href="#process">Process</a>
       <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn nav-cta">Book Consultation</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">☰</button>
+  </div>
+</header>
+ 
+<main id="main">
+ 
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge">Enterprise Financial Intelligence Platform</span>
+        <h1>Finance should drive strategy, <span class="gradient-text">not just report numbers.</span></h1>
+        <p class="hero-description">CFO advisory, ERP integration, financial modeling and AI-powered business intelligence — built for executive teams who need a clear line from the ledger to the next decision.</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn">Explore Solutions</a>
+          <a href="#contact" class="btn btn-outline">Book Consultation</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric"><h2 data-count="250">0</h2><span>Enterprise Projects</span></div>
+          <div class="metric"><h2 data-count="98">0</h2><span>Client Satisfaction %</span></div>
+          <div class="metric"><h2 data-count="15">0</h2><span>Years Experience</span></div>
+        </div>
+      </div>
+ 
+      <div class="hero-dashboard">
+        <div class="ledger-panel">
+          <div class="ledger-head">
+            <h3>Executive Snapshot</h3>
+            <span>FY26 · Q2</span>
+          </div>
+          <div class="ledger-rows">
+            <div class="ledger-row">
+              <div class="label">Revenue Growth<span class="sub">vs. prior quarter</span></div>
+              <div class="value">+18.4%</div>
+              <div class="delta up">▲ on track</div>
+            </div>
+            <div class="ledger-row">
+              <div class="label">Cash Conversion Cycle<span class="sub">days, net</span></div>
+              <div class="value">37</div>
+              <div class="delta up">▲ improving</div>
+            </div>
+            <div class="ledger-row">
+              <div class="label">Forecast Accuracy<span class="sub">12-month rolling</span></div>
+              <div class="value">96.2%</div>
+              <div class="delta up">▲ improving</div>
+            </div>
+            <div class="ledger-row">
+              <div class="label">Working Capital Risk<span class="sub">flagged exposure</span></div>
+              <div class="value">Medium</div>
+              <div class="delta watch">● review</div>
+            </div>
+          </div>
+          <div class="ledger-foot">
+            <span>Prepared for Executive Review</span>
+            <span>Confidential</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+ 
+  <section class="executive-story" aria-labelledby="story-heading">
+    <div class="container story-grid">
+      <div class="story-intro">
+        <span class="eyebrow">Executive Perspective</span>
+        <h2 id="story-heading">Built by someone who has closed the books and chaired the board meeting.</h2>
+      </div>
+      <p>I help business owners and executive teams turn financial data into strategic decisions — combining CFO leadership, ERP transformation, business intelligence, financial modeling and AI-driven analytics into one coherent view of the business.</p>
+ 
+      <div class="story-cards">
+        <div class="story-card"><h3>Strategic CFO</h3><p>Turning financial information into decisions that protect margin and accelerate growth.</p></div>
+        <div class="story-card"><h3>Digital Transformation</h3><p>ERP implementation, automation and business intelligence for organizations ready to scale.</p></div>
+        <div class="story-card"><h3>AI Financial Intelligence</h3><p>Forecasting and reporting systems that surface risk before it reaches the board.</p></div>
+        <div class="story-card"><h3>Governance &amp; Audit</h3><p>Compliance built into the process, not bolted on before year-end.</p></div>
+      </div>
+ 
+      <ul class="timeline">
+        <li><strong>Junior Accountant</strong>Mastering the fundamentals of the ledger.</li>
+        <li><strong>Senior Auditor</strong>Leading compliance and assurance projects.</li>
+        <li><strong>Finance Manager</strong>Driving ERP transformation end to end.</li>
+        <li><strong>CFO Advisor</strong>Delivering strategic financial intelligence.</li>
+      </ul>
+    </div>
+  </section>
+ 
+  <section id="services" class="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Solutions</span>
+        <h2 id="services-heading">Six ways finance can carry more weight.</h2>
+        <p>Each engagement starts from your numbers, not a template — scoped to where the business is today and where it needs to be in 18 months.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card"><span class="service-num">01</span><h3>CFO Advisory</h3><p>Fractional and project-based CFO leadership for strategy, capital planning and board reporting.</p></article>
+        <article class="service-card"><span class="service-num">02</span><h3>ERP Consulting &amp; Integration</h3><p>Selecting, implementing and integrating ERP systems so finance data is trusted at the source.</p></article>
+        <article class="service-card"><span class="service-num">03</span><h3>Business Intelligence</h3><p>Dashboards and reporting pipelines that turn raw transactions into decisions your team can act on.</p></article>
+        <article class="service-card"><span class="service-num">04</span><h3>Financial Modeling</h3><p>Forecasts, scenario models and valuation work built to withstand investor and board scrutiny.</p></article>
+        <article class="service-card"><span class="service-num">05</span><h3>AI-Powered Decision Support</h3><p>Forecasting and anomaly-detection models layered on top of your existing finance stack.</p></article>
+        <article class="service-card"><span class="service-num">06</span><h3>Audit &amp; Compliance</h3><p>Audit-ready processes and controls that hold up under regulatory and investor review.</p></article>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="dashboard" class="platform" aria-labelledby="platform-heading">
+    <div class="container platform-grid">
+      <div>
+        <span class="eyebrow">Platform</span>
+        <h2 id="platform-heading">One source of financial truth, updated continuously.</h2>
+        <p style="color:var(--text-on-ink-dim); margin-top:16px;">Live KPI tracking sits underneath every advisory engagement, so recommendations are grounded in the current state of the business — not last quarter's close.</p>
+        <ul class="platform-list">
+          <li>Real-time consolidation across entities and currencies</li>
+          <li>Automated variance flags against budget and forecast</li>
+          <li>Board-ready reporting exported on demand</li>
+          <li>Role-based access for finance, ops and the board</li>
+        </ul>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><span class="label">EBITDA Margin</span><div class="num">24.7%</div><div class="bar"><span style="width:74%"></span></div></div>
+        <div class="kpi-card"><span class="label">Gross Margin</span><div class="num">58.1%</div><div class="bar"><span style="width:81%"></span></div></div>
+        <div class="kpi-card"><span class="label">Burn Multiple</span><div class="num">0.8x</div><div class="bar"><span style="width:62%"></span></div></div>
+        <div class="kpi-card"><span class="label">Runway</span><div class="num">19 mo</div><div class="bar"><span style="width:55%"></span></div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="process" class="process" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Engagement Process</span>
+        <h2 id="process-heading">A four-stage path from diagnosis to governance.</h2>
+        <p>The order matters — each stage produces the inputs the next one depends on.</p>
+      </div>
+      <div class="process-rows">
+        <div class="process-row">
+          <div class="pnum">01</div>
+          <h3>Discovery &amp; Diagnostic</h3>
+          <p>A structured review of financial statements, systems and reporting gaps to establish a clear baseline.</p>
+        </div>
+        <div class="process-row">
+          <div class="pnum">02</div>
+          <h3>Financial Architecture Design</h3>
+          <p>Designing the chart of accounts, ERP structure and reporting model the business will run on.</p>
+        </div>
+        <div class="process-row">
+          <div class="pnum">03</div>
+          <h3>Implementation &amp; Integration</h3>
+          <p>Rolling out ERP, BI and forecasting tools, with finance and operations teams trained on the new workflow.</p>
+        </div>
+        <div class="process-row">
+          <div class="pnum">04</div>
+          <h3>Governance &amp; Continuous Intelligence</h3>
+          <p>Ongoing reporting cadence, controls and AI-supported forecasting to keep decisions current.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <span class="eyebrow">Trusted Voices</span>
+      <h2 id="testimonials-heading" style="margin-bottom:40px;">What executives and clients say.</h2>
+      <div class="testimonial-list">
+        <div class="testimonial-card"><p>"CFO advisory turned our financial reporting into a strategic tool, not just a monthly close."</p><strong>CEO — Manufacturing Group</strong></div>
+        <div class="testimonial-card"><p>"The ERP integration streamlined our operations and gave us real-time visibility across sites."</p><strong>COO — Construction &amp; Infrastructure</strong></div>
+        <div class="testimonial-card"><p>"AI-driven forecasting lifted our accuracy to 98% — the board noticed within a quarter."</p><strong>CFO — Technology Firm</strong></div>
+      </div>
+      <div class="case-studies">
+        <h3>Case Studies</h3>
+        <ul>
+          <li>Restructuring a distressed retail chain into profitability within 14 months</li>
+          <li>ERP transformation across six sites for a regional construction company</li>
+          <li>AI-powered forecasting model deployed for a healthcare provider network</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="contact" class="contact" aria-labelledby="contact-heading">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow">Get In Touch</span>
+        <h2 id="contact-heading">Book your executive consultation.</h2>
+        <p style="color:var(--text-on-ink-dim); margin-top:16px;">Whether you need CFO advisory, audit services, ERP transformation or AI-powered financial intelligence — tell me where the business is today.</p>
+        <div class="contact-info">
+          <p><strong>Email:</strong> <a href="mailto:amir.elfeky.finance@outlook.com">amir.elfeky.finance@outlook.com</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/201015555880" target="_blank" rel="noopener">+20 10 1555 5880</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/amirelfeky1978/" target="_blank" rel="noopener">linkedin.com/in/amirelfeky1978</a></p>
+        </div>
+      </div>
+ 
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Business email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your needs" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Request</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="form-note">This form currently opens your email client. Connect it to Formspree or your own API endpoint to receive submissions directly.</p>
+      </form>
+    </div>
+  </section>
+ 
+</main>
+ 
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <h3>Amir ElFeky Accounting &amp; Audit Office</h3>
+      <p>Executive Financial Intelligence &amp; CFO Advisory</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#home">Home</a>
+      <a href="#services">Solutions</a>
+      <a href="#dashboard">Platform</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
     <div class="footer-social">
-      <a href="https://www.linkedin.com/in/amirelfeky1978/" target="_blank">LinkedIn</a>
-      <span>Email: <a href="mailto:amir.elfeky.finance@outlook.com">amir.elfeky.finance@outlook.com</a></span>
-      <span>WhatsApp: <a href="https://wa.me/201015555880" target="_blank">01015555880</a></span>
+      <a href="https://www.linkedin.com/in/amirelfeky1978/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:amir.elfeky.finance@outlook.com">amir.elfeky.finance@outlook.com</a>
+      <a href="https://wa.me/201015555880" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Amir ElFeky Accounting & Audit Office. All Rights Reserved.</p>
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> Amir ElFeky Accounting &amp; Audit Office. All rights reserved.</p>
   </div>
 </footer>
-
+ 
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+ 
+  // animated counters, respects reduced motion
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const counters = document.querySelectorAll('[data-count]');
+  const animate = (el) => {
+    const target = parseFloat(el.dataset.count);
+    if (prefersReduced) { el.textContent = target; return; }
+    let start = 0;
+    const duration = 900;
+    const startTime = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      el.textContent = Math.floor(progress * target) + (progress === 1 ? '' : '');
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { animate(entry.target); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => io.observe(c));
+  } else {
+    counters.forEach(c => c.textContent = c.dataset.count);
+  }
+ 
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navigation = document.querySelector('.navigation');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navigation.style.display === 'flex';
+      navigation.style.display = isOpen ? 'none' : 'flex';
+      navigation.style.flexDirection = 'column';
+      navigation.style.position = 'absolute';
+      navigation.style.top = '100%';
+      navigation.style.left = '0';
+      navigation.style.right = '0';
+      navigation.style.background = 'var(--ink)';
+      navigation.style.padding = '16px 28px';
+      navigation.style.borderTop = '1px solid var(--line)';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+  }
+ 
+  // contact form: client-side validation + mailto fallback
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+ 
+    if (!name || !emailOk || !message) {
+      status.textContent = 'Please fill in your name, a valid email, and a message.';
+      status.className = 'form-status err';
+      return;
+    }
+ 
+    const subject = encodeURIComponent('New consultation request from ' + name);
+    const body = encodeURIComponent(message + '\n\nReply to: ' + email);
+    window.location.href = `mailto:amir.elfeky.finance@outlook.com?subject=${subject}&body=${body}`;
+ 
+    status.textContent = 'Opening your email client to send the request…';
+    status.className = 'form-status ok';
+  });
+</script>
 </body>
 </html>
+ 
