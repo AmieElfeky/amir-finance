@@ -8,8 +8,53 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
  
-  // Animated counters (hero metrics), respects reduced-motion
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ 
+  // Scroll progress bar
+  const progress = document.getElementById('scrollProgress');
+  if (progress) {
+    const updateProgress = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      progress.style.width = scrolled + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+ 
+  // Generic scroll-reveal for any element with .reveal or .seal-stamp
+  const revealEls = document.querySelectorAll('.reveal, .seal-stamp');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const revealIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    revealEls.forEach(el => revealIO.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+ 
+  // KPI bars fill to their data-width when scrolled into view
+  const kpiBars = document.querySelectorAll('.kpi-card .bar span[data-width]');
+  if (kpiBars.length) {
+    const fillBar = (el) => { el.style.width = prefersReduced ? el.dataset.width + '%' : '0%'; requestAnimationFrame(() => requestAnimationFrame(() => { el.style.width = el.dataset.width + '%'; })); };
+    if ('IntersectionObserver' in window) {
+      const kpiIO = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { fillBar(entry.target); kpiIO.unobserve(entry.target); }
+        });
+      }, { threshold: 0.4 });
+      kpiBars.forEach(b => kpiIO.observe(b));
+    } else {
+      kpiBars.forEach(b => b.style.width = b.dataset.width + '%');
+    }
+  }
+ 
+  // Animated counters (hero metrics), respects reduced-motion
   const counters = document.querySelectorAll('[data-count]');
  
   const animateCounter = (el) => {
