@@ -85,36 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
  
-  // Animated counters (hero metrics), respects reduced-motion
+  // Animated counters (hero metrics) — these sit above the fold, so we
+  // animate them directly on load instead of waiting on IntersectionObserver,
+  // which can be unreliable for content that's already in view on first paint.
   const counters = document.querySelectorAll('[data-count]');
  
   const animateCounter = (el) => {
     const target = parseFloat(el.dataset.count);
-    if (prefersReduced || isNaN(target)) { el.textContent = target; return; }
-    const duration = 900;
+    const suffix = el.dataset.suffix || '';
+    if (prefersReduced || isNaN(target)) { el.textContent = target + suffix; return; }
+    const duration = 1100;
     const startTime = performance.now();
     const step = (now) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      el.textContent = Math.floor(progress * target);
+      el.textContent = Math.floor(progress * target) + suffix;
       if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target;
+      else el.textContent = target + suffix;
     };
     requestAnimationFrame(step);
   };
  
-  if ('IntersectionObserver' in window && counters.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    counters.forEach(c => io.observe(c));
-  } else {
-    counters.forEach(c => c.textContent = c.dataset.count);
-  }
+  counters.forEach(c => animateCounter(c));
  
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
