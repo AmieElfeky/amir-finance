@@ -318,21 +318,43 @@ section{ padding:88px 0; }
 .process-row h3{ font-size:18px; }
 .process-row p{ margin:10px 0 0; color:var(--text-on-ink-dim); font-size:14.5px; }
  
-/* ===== TESTIMONIALS ===== */
-.testimonials{ background:var(--paper); color:var(--text-on-paper); }
-.testimonials .eyebrow{ color:var(--ledger-green); }
-.testimonials .eyebrow::before{ background:var(--ledger-green); }
-.testimonials-heading{ margin-bottom:40px; }
-.testimonial-list{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); margin-bottom:1px; }
-.testimonial-card{ background:var(--paper); padding:30px 26px; transition:transform .25s ease, background .25s ease; }
-.testimonial-card:hover{ transform:translateY(-3px); background:#FBFAF6; }
-.testimonial-card p{ font-family:var(--display); font-size:17px; font-style:italic; color:var(--text-on-paper); margin:0 0 18px; line-height:1.45; }
-.testimonial-card strong{ font-family:var(--mono); font-size:12px; color:var(--text-on-paper-dim); font-weight:500; letter-spacing:0.02em; }
-.case-studies{ border:1px solid var(--line-dark); border-top:none; padding:28px 26px; }
-.case-studies h3{ font-size:14px; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.08em; color:var(--ledger-green); margin-bottom:14px; }
-.case-studies ul{ margin:0; padding:0; list-style:none; display:grid; gap:10px; }
-.case-studies li{ font-size:14.5px; padding-left:18px; position:relative; color:var(--text-on-paper); }
-.case-studies li::before{ content:"›"; position:absolute; left:0; color:var(--ledger-green); }
+/* ===== WHY CLIENTS STAY (honest value statements, no fabricated quotes) ===== */
+.client-value{ background:var(--paper); color:var(--text-on-paper); }
+.client-value .eyebrow{ color:var(--ledger-green); }
+.client-value .eyebrow::before{ background:var(--ledger-green); }
+.value-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); }
+.value-card{ background:var(--paper); padding:30px 26px; transition:transform .25s ease, background .25s ease; }
+.value-card:hover{ transform:translateY(-3px); background:#FBFAF6; }
+.value-card h3{ font-size:17px; margin-bottom:10px; }
+.value-card p{ font-size:14.5px; color:var(--text-on-paper-dim); margin:0; line-height:1.55; }
+ 
+/* ===== SELECTED ENGAGEMENTS ===== */
+.engagements{ background:var(--ink); }
+.engagement-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:40px; }
+.engagement-card{ background:var(--ink); padding:28px 24px; transition:transform .25s ease, background .25s ease; }
+.engagement-card:hover{ transform:translateY(-3px); background:#101c2c; }
+.eng-tag{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--gold-soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; display:inline-block; margin-bottom:14px;
+}
+.engagement-card h3{ font-size:16px; margin-bottom:14px; }
+.engagement-card dl{ margin:0; }
+.engagement-card dt{
+  font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:0.06em;
+  color:var(--text-on-ink-dim); margin-top:12px;
+}
+.engagement-card dt:first-child{ margin-top:0; }
+.engagement-card dd{ margin:4px 0 0; font-size:13.5px; color:var(--text-on-ink-dim); line-height:1.5; }
+.eng-note{ margin:16px 0 0; font-size:11.5px; color:var(--text-on-ink-dim); font-style:italic; border-top:1px solid var(--line); padding-top:12px; }
+ 
+.industries-table{ border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+.ind-row{ display:grid; grid-template-columns:1fr 1.3fr; border-top:1px solid var(--line); }
+.ind-row:first-child{ border-top:none; }
+.ind-row > div{ padding:15px 20px; font-size:14px; }
+.ind-row > div:first-child{ border-right:1px solid var(--line); color:var(--text-on-ink); font-weight:500; }
+.ind-row > div:last-child{ color:var(--text-on-ink-dim); }
+.ind-row-head{ background:rgba(255,255,255,0.03); }
+.ind-row-head > div{ font-family:var(--mono); text-transform:uppercase; font-size:10.5px; letter-spacing:0.07em; color:var(--gold-soft); font-weight:400; }
  
 /* ===== CONTACT ===== */
 .contact{ position:relative; }
@@ -377,7 +399,9 @@ section{ padding:88px 0; }
   .hero-grid, .story-grid, .platform-grid, .contact-grid{ grid-template-columns:1fr; }
   .service-grid{ grid-template-columns:1fr 1fr; }
   .cred-grid{ grid-template-columns:1fr; }
-  .testimonial-list{ grid-template-columns:1fr; }
+  .value-grid, .engagement-grid{ grid-template-columns:1fr; }
+  .ind-row{ grid-template-columns:1fr; }
+  .ind-row > div:first-child{ border-right:none; border-bottom:1px solid var(--line); }
   .process-row{ grid-template-columns:50px 1fr; }
   .process-row p{ grid-column:1 / -1; }
   .footer-grid{ grid-template-columns:1fr; }
