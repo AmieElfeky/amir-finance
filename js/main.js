@@ -63,8 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = document.querySelector(`.navigation a[href="#${entry.target.id}"]`);
         if (!link) return;
         if (entry.isIntersecting) {
-          navLinks.forEach(l => l.classList.remove('is-active'));
+          navLinks.forEach(l => { l.classList.remove('is-active'); l.removeAttribute('aria-current'); });
           link.classList.add('is-active');
+          link.setAttribute('aria-current', 'true');
         }
       });
     }, { rootMargin: '-45% 0px -45% 0px' });
@@ -138,11 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
  
-  // Contact form: client-side validation + mailto fallback
+  // Contact form: validation, then a real backend if configured, else mailto fallback.
+  // To receive submissions directly: paste your Formspree (or any POST-JSON) endpoint
+  // below. Example: 'https://formspree.io/f/your-id'. Leave empty to keep using mailto.
+  const FORM_ENDPOINT = '';
+ 
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
   if (form && status) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = form.name.value.trim();
       const email = form.email.value.trim();
@@ -155,6 +160,35 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
  
+      if (FORM_ENDPOINT) {
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalLabel = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+        try {
+          const res = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({ name, email, message })
+          });
+          if (res.ok) {
+            status.textContent = 'Thank you — your request has been sent. I will be in touch shortly.';
+            status.className = 'form-status ok';
+            form.reset();
+          } else {
+            throw new Error('Request failed');
+          }
+        } catch (err) {
+          status.textContent = 'Something went wrong sending the form. Please email directly instead.';
+          status.className = 'form-status err';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        }
+        return;
+      }
+ 
+      // Fallback: open the visitor's email client
       const subject = encodeURIComponent('New consultation request from ' + name);
       const body = encodeURIComponent(message + '\n\nReply to: ' + email);
       window.location.href = `mailto:amir.elfeky.finance@outlook.com?subject=${subject}&body=${body}`;
