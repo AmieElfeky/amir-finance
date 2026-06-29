@@ -54,6 +54,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
  
+  // Scrollspy: highlight the nav link for the section currently in view
+  const navLinks = document.querySelectorAll('.navigation a[href^="#"]');
+  const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    const spyIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const link = document.querySelector(`.navigation a[href="#${entry.target.id}"]`);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('is-active'));
+          link.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    sections.forEach(s => spyIO.observe(s));
+  }
+ 
+  // Staggered hero entrance for a smoother first-load feel
+  const heroEntrance = document.querySelectorAll('.hero-content > *');
+  if (heroEntrance.length && !prefersReduced) {
+    heroEntrance.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+      el.style.transition = 'opacity .6s ease, transform .6s ease';
+      el.style.transitionDelay = (i * 90) + 'ms';
+    });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      heroEntrance.forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
+    }));
+  }
+ 
   // Animated counters (hero metrics), respects reduced-motion
   const counters = document.querySelectorAll('[data-count]');
  
