@@ -1,3 +1,4 @@
+
 /* =========================================================
    AMIR ELFEKY — EXECUTIVE FINANCIAL INTELLIGENCE
    Design language: financial ledger / statement aesthetic
@@ -228,13 +229,13 @@ section{ padding:88px 0; }
 .story-portrait{ margin:0; }
 .portrait-frame{ position:relative; }
 .portrait-frame img{
-  width:100%; display:block; border:1px solid var(--line);
-  filter:saturate(0.94) contrast(1.04); aspect-ratio:300/399; object-fit:cover;
+  width:100%; height:auto; display:block; border:1px solid var(--line);
+  filter:saturate(0.94) contrast(1.04); aspect-ratio:760/1010; object-fit:cover;
 }
 .portrait-frame::before{ content:""; position:absolute; inset:9px; border:1px solid var(--gold); pointer-events:none; }
 .story-portrait figcaption{ margin-top:16px; text-align:center; }
-.story-portrait figcaption strong{ display:block; font-family:var(--display); font-size:16px; color:var(--text-on-ink); font-weight:600; }
-.story-portrait figcaption span{ display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-on-ink-dim); margin-top:5px; line-height:1.5; }
+.story-portrait figcaption strong{ display:block; font-family:var(--display); font-size:16px; color:var(--gold-soft); font-weight:600; }
+.story-portrait figcaption span{ display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:0.03em; text-transform:uppercase; color:var(--gold); opacity:.75; margin-top:5px; line-height:1.5; }
  
 .story-main{ display:flex; flex-direction:column; gap:26px; }
 .story-cards{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); }
@@ -435,5 +436,18 @@ section{ padding:88px 0; }
   .service-grid{ grid-template-columns:1fr; }
   .kpi-grid{ grid-template-columns:1fr; }
   .hero-metrics{ gap:24px; }
+  .hero::before{ background:none; } /* repeating gradient is a needless paint cost on small screens */
+  .hero{ padding:64px 0 56px; }
+  section{ padding:60px 0; }
+}
+ 
+/* Touch devices: hover-only lift/shine effects add no value and can feel
+   sluggish on lower-powered phones, so we scope them to real hover support. */
+@media (hover: none){
+  .service-card:hover, .story-card:hover, .cred-card:hover,
+  .value-card:hover, .engagement-card:hover, .kpi-card:hover{
+    transform:none;
+  }
+  .btn::after{ display:none; }
 }
  
