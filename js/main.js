@@ -1,3 +1,4 @@
+
 /* =========================================================
    AMIR ELFEKY — site interactions
    ========================================================= */
@@ -22,7 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProgress();
   }
  
-  // Generic scroll-reveal for any element with .reveal or .seal-stamp
+  // Generic scroll-reveal for any element with .reveal or .seal-stamp.
+  // Mobile fix: tall sections on narrow/short viewports could fail to ever
+  // reach the old 18% visibility threshold, leaving content permanently
+  // hidden. We use a much lower threshold + generous rootMargin so reveal
+  // fires as soon as an element starts entering the viewport, and we add a
+  // safety-net timeout that force-reveals anything left over just in case.
   const revealEls = document.querySelectorAll('.reveal, .seal-stamp');
   if ('IntersectionObserver' in window && revealEls.length) {
     const revealIO = new IntersectionObserver((entries) => {
@@ -32,8 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
           revealIO.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.18 });
+    }, { threshold: 0.01, rootMargin: '0px 0px -5% 0px' });
     revealEls.forEach(el => revealIO.observe(el));
+ 
+    // Safety net: guarantee visibility even if the observer never fires
+    // (e.g. unusual viewport sizes, fast navigation, edge-case browsers)
+    window.setTimeout(() => {
+      revealEls.forEach(el => el.classList.add('is-visible'));
+    }, 2500);
   } else {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
@@ -47,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) { fillBar(entry.target); kpiIO.unobserve(entry.target); }
         });
-      }, { threshold: 0.4 });
+      }, { threshold: 0.15 });
       kpiBars.forEach(b => kpiIO.observe(b));
     } else {
       kpiBars.forEach(b => b.style.width = b.dataset.width + '%');
