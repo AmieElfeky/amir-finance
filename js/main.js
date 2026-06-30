@@ -5,6 +5,12 @@
  
 document.addEventListener('DOMContentLoaded', () => {
  
+  // Confirm JS is running before enabling any hide-then-reveal animation.
+  // Until this class is present, .reveal / .seal-stamp stay visible via
+  // plain CSS — so content can never get stuck invisible on a slow or
+  // flaky mobile connection.
+  document.documentElement.classList.add('js-ready');
+ 
   // Footer year
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -45,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // (e.g. unusual viewport sizes, fast navigation, edge-case browsers)
     window.setTimeout(() => {
       revealEls.forEach(el => el.classList.add('is-visible'));
-    }, 2500);
+    }, 1200);
   } else {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
