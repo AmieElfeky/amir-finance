@@ -1,4 +1,5 @@
 
+ 
 /* =========================================================
    AMIR ELFEKY — site interactions
    ========================================================= */
@@ -160,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact form: validation, then a real backend if configured, else mailto fallback.
   // To receive submissions directly: paste your Formspree (or any POST-JSON) endpoint
   // below. Example: 'https://formspree.io/f/your-id'. Leave empty to keep using mailto.
-  const FORM_ENDPOINT = '';
+  const FORM_ENDPOINT = 'https://formspree.io/f/mdarwzna';
  
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
@@ -216,4 +217,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+ 
  
