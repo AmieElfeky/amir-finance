@@ -1,4 +1,5 @@
 
+ 
 /* =========================================================
    AMIR ELFEKY — EXECUTIVE FINANCIAL INTELLIGENCE
    Design language: financial ledger / statement aesthetic
@@ -523,6 +524,7 @@ html.js-ready .seal-stamp.is-visible{ opacity:1; transform:scale(1) rotate(0deg)
   .hero::before{ background:none; } /* repeating gradient is a needless paint cost on small screens */
   .hero{ padding:64px 0 56px; }
   section{ padding:60px 0; }
+  .audit-seal{ width:100px; height:100px; }
 }
  
 /* Touch devices: hover-only lift/shine effects add no value and can feel
@@ -553,6 +555,22 @@ html.js-ready .seal-stamp.is-visible{ opacity:1; transform:scale(1) rotate(0deg)
 [dir="rtl"] .process-row{ grid-template-columns:90px 1fr 1.4fr; }
 [dir="rtl"] .case-studies li::before, [dir="rtl"] .platform-list li::before{ content:"—"; }
 [dir="rtl"] .lang-switch{ direction:ltr; }
+ 
+/* Fraunces (the display font) has no Arabic glyphs, so Arabic headings were
+   silently falling back to the browser's generic serif font — which renders
+   much larger/heavier than intended on many Android phones. Force the
+   already-loaded Cairo font for all headings in the Arabic version, with
+   looser line-height since Arabic script needs more vertical room than Latin. */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4{
+  font-family:"Cairo", var(--body); font-weight:700; line-height:1.4; letter-spacing:0;
+}
+[dir="rtl"] .hero h1{ font-size:clamp(28px,4.2vw,46px); line-height:1.45; }
+[dir="rtl"] .gradient-text{ line-height:1.45; }
+[dir="rtl"] .story-portrait figcaption strong{ font-family:"Cairo", var(--body); font-weight:700; }
+@media (max-width:600px){
+  [dir="rtl"] h1{ font-size:26px; }
+  [dir="rtl"] h2{ font-size:22px; }
+}
 @media (max-width: 900px){
   [dir="rtl"] .owner-row > div:first-child{ border-left:none; border-bottom:1px solid var(--line); }
   [dir="rtl"] .ind-row > div:first-child{ border-left:none; border-bottom:1px solid var(--line); }
