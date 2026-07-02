@@ -1,5 +1,4 @@
 
- 
 /* =========================================================
    AMIR ELFEKY — site interactions
    ========================================================= */
@@ -158,64 +157,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
  
-  // Contact form: validation, then a real backend if configured, else mailto fallback.
-  // To receive submissions directly: paste your Formspree (or any POST-JSON) endpoint
-  // below. Example: 'https://formspree.io/f/your-id'. Leave empty to keep using mailto.
-  const FORM_ENDPOINT = 'https://formspree.io/f/mdarwzna';
+  // Contact form → WhatsApp redirect
+  // Builds a pre-filled message from the form fields and opens WhatsApp directly.
+  const WA_NUMBER = '201015555880';
+  const isArabic = document.documentElement.lang === 'ar';
  
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
   if (form && status) {
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
+      const name    = form.name.value.trim();
+      const email   = form.email.value.trim();
       const message = form.message.value.trim();
       const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
  
       if (!name || !emailOk || !message) {
-        status.textContent = 'Please fill in your name, a valid email, and a message.';
+        status.textContent = isArabic
+          ? 'من فضلك أدخل اسمك وبريدك الإلكتروني الصحيح ورسالتك.'
+          : 'Please fill in your name, a valid email, and a message.';
         status.className = 'form-status err';
         return;
       }
  
-      if (FORM_ENDPOINT) {
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalLabel = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
-        try {
-          const res = await fetch(FORM_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({ name, email, message })
-          });
-          if (res.ok) {
-            status.textContent = 'Thank you — your request has been sent. I will be in touch shortly.';
-            status.className = 'form-status ok';
-            form.reset();
-          } else {
-            throw new Error('Request failed');
-          }
-        } catch (err) {
-          status.textContent = 'Something went wrong sending the form. Please email directly instead.';
-          status.className = 'form-status err';
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel;
-        }
-        return;
-      }
+      const waText = isArabic
+        ? `مرحبًا،\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\n\nالرسالة:\n${message}`
+        : `Hello,\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
  
-      // Fallback: open the visitor's email client
-      const subject = encodeURIComponent('New consultation request from ' + name);
-      const body = encodeURIComponent(message + '\n\nReply to: ' + email);
-      window.location.href = `mailto:amir.elfeky.finance@outlook.com?subject=${subject}&body=${body}`;
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`, '_blank');
  
-      status.textContent = 'Opening your email client to send the request…';
+      status.textContent = isArabic
+        ? 'جاري فتح واتساب لإرسال رسالتك...'
+        : 'Opening WhatsApp to send your message…';
       status.className = 'form-status ok';
     });
   }
 });
- 
  
