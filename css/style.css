@@ -1,5 +1,6 @@
 
  
+ 
 /* =========================================================
    AMIR ELFEKY — EXECUTIVE FINANCIAL INTELLIGENCE
    Design language: financial ledger / statement aesthetic
@@ -166,11 +167,19 @@ html.js-ready .reveal.is-visible{ opacity:1; transform:translateY(0); }
   display:flex; align-items:center; justify-content:center;
   box-shadow:0 6px 20px rgba(0,0,0,0.35); transition:transform .2s ease, box-shadow .2s ease;
 }
-.whatsapp-float svg{ width:30px; height:30px; fill:#fff; }
+.whatsapp-float svg{ width:30px; height:30px; fill:#fff; position:relative; z-index:2; }
 .whatsapp-float:hover{ transform:scale(1.08); box-shadow:0 8px 26px rgba(0,0,0,0.45); }
+.whatsapp-pulse{
+  position:absolute; inset:0; border-radius:50%; background:#25D366;
+  animation:wa-pulse 2.4s ease-out infinite; z-index:1;
+}
+@keyframes wa-pulse{
+  0%{ opacity:.55; transform:scale(1); }
+  100%{ opacity:0; transform:scale(1.9); }
+}
 [dir="rtl"] .whatsapp-float{ right:auto; left:24px; }
 @media (max-width:600px){ .whatsapp-float{ width:50px; height:50px; bottom:18px; right:18px; } [dir="rtl"] .whatsapp-float{ left:18px; } }
-@media (prefers-reduced-motion: reduce){ .whatsapp-float{ transition:none; } }
+@media (prefers-reduced-motion: reduce){ .whatsapp-float{ transition:none; } .whatsapp-pulse{ animation:none; display:none; } }
  
 /* ===== HERO ===== */
 .hero{ padding:96px 0 80px; position:relative; overflow:hidden; }
@@ -178,6 +187,11 @@ html.js-ready .reveal.is-visible{ opacity:1; transform:translateY(0); }
   content:""; position:absolute; inset:0;
   background: repeating-linear-gradient(transparent 0 39px, var(--line) 39px 40px);
   opacity:.5; pointer-events:none;
+}
+.hero::after{
+  content:""; position:absolute; top:-20%; right:-10%; width:640px; height:640px;
+  background:radial-gradient(circle, rgba(201,162,39,0.16) 0%, rgba(201,162,39,0) 70%);
+  pointer-events:none;
 }
 .hero-grid{ position:relative; display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center; }
 .hero-badge{
@@ -212,6 +226,14 @@ html.js-ready .reveal.is-visible{ opacity:1; transform:translateY(0); }
 .metric span{ font-size:12px; color:var(--text-on-ink-dim); letter-spacing:0.04em; }
  
 /* ledger panel — signature element */
+.hero-dashboard{ position:relative; }
+.hero-dashboard::before{
+  content:""; position:absolute; left:-24px; right:-24px; bottom:-24px; top:40px; z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Cg fill='%23C9A227' opacity='0.14'%3E%3Crect x='10' y='80' width='14' height='30'/%3E%3Crect x='36' y='66' width='14' height='44'/%3E%3Crect x='62' y='72' width='14' height='38'/%3E%3Crect x='88' y='50' width='14' height='60'/%3E%3Crect x='114' y='40' width='14' height='70'/%3E%3Crect x='140' y='24' width='14' height='86'/%3E%3Crect x='166' y='14' width='14' height='96'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:bottom right; background-size:280px 168px;
+  pointer-events:none;
+}
+.hero-dashboard > *{ position:relative; z-index:1; }
 .ledger-panel{
   background:var(--paper); color:var(--text-on-paper); border-radius:var(--radius);
   border:1px solid var(--line-dark); box-shadow:0 30px 60px -20px rgba(0,0,0,0.45);
@@ -431,6 +453,7 @@ html.js-ready .seal-stamp.is-visible{ opacity:1; transform:scale(1) rotate(0deg)
 .insights .eyebrow::before{ background:var(--ledger-green); }
 .insights-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); margin-bottom:28px; }
 .insight-card{ background:var(--paper); padding:28px 26px; transition:transform .25s ease, background .25s ease; }
+.insight-icon{ width:34px; height:34px; margin-bottom:14px; }
 .insight-card:hover{ transform:translateY(-3px); background:#FBFAF6; }
 .insight-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
 .insight-meta{
@@ -576,4 +599,3 @@ html.js-ready .seal-stamp.is-visible{ opacity:1; transform:scale(1) rotate(0deg)
   [dir="rtl"] .ind-row > div:first-child{ border-left:none; border-bottom:1px solid var(--line); }
   [dir="rtl"] .process-row{ grid-template-columns:50px 1fr; }
 }
- 
