@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+ 
+Sitemap: https://amieelfeky.github.io/amir-finance/sitemap.xml
+ 
