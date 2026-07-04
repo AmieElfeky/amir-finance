@@ -104,27 +104,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
  
-  // Animated counters (hero metrics) — these sit above the fold, so we
-  // animate them directly on load instead of waiting on IntersectionObserver,
-  // which can be unreliable for content that's already in view on first paint.
+  // Animated counters — supports integers, decimals, and custom suffixes.
+  // Hero counters fire immediately (above the fold).
+  // Platform KPI counters fire when scrolled into view.
   const counters = document.querySelectorAll('[data-count]');
  
   const animateCounter = (el) => {
-    const target = parseFloat(el.dataset.count);
-    const suffix = el.dataset.suffix || '';
-    if (prefersReduced || isNaN(target)) { el.textContent = target + suffix; return; }
+    const target   = parseFloat(el.dataset.count);
+    const suffix   = el.dataset.suffix   || '';
+    const prefix   = el.dataset.prefix   || '';
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    if (prefersReduced || isNaN(target)) {
+      el.textContent = prefix + target.toFixed(decimals) + suffix; return;
+    }
     const duration = 1100;
     const startTime = performance.now();
     const step = (now) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      el.textContent = Math.floor(progress * target) + suffix;
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      el.textContent = prefix + (eased * target).toFixed(decimals) + suffix;
       if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target + suffix;
+      else el.textContent = prefix + target.toFixed(decimals) + suffix;
     };
     requestAnimationFrame(step);
   };
  
-  counters.forEach(c => animateCounter(c));
+  // Hero counters: fire immediately (they're above the fold)
+  document.querySelectorAll('.hero [data-count]').forEach(c => animateCounter(c));
+ 
+  // All other counters: fire when scrolled into view
+  const scrollCounters = document.querySelectorAll('[data-count]:not(.hero [data-count])');
+  if ('IntersectionObserver' in window && scrollCounters.length) {
+    const cntIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { animateCounter(entry.target); cntIO.unobserve(entry.target); }
+      });
+    }, { threshold: 0.3 });
+    scrollCounters.forEach(c => cntIO.observe(c));
+  } else {
+    scrollCounters.forEach(c => animateCounter(c));
+  }
  
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
@@ -184,12 +203,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `مرحبًا،\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\n\nالرسالة:\n${message}`
         : `Hello,\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
  
-      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`, '_blank');
+      const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`;
+      const newTab = window.open(waUrl, '_blank');
  
-      status.textContent = isArabic
-        ? 'جاري فتح واتساب لإرسال رسالتك...'
-        : 'Opening WhatsApp to send your message…';
-      status.className = 'form-status ok';
+      if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
+        // Popup was blocked by the browser — fall back to same-tab navigation
+        // and show a manual link so the message is never lost.
+        status.innerHTML = (isArabic
+          ? 'المتصفح منع فتح نافذة جديدة. '
+          : 'Your browser blocked the popup. ') +
+          `<a href="${waUrl}" target="_blank" rel="noopener" style="color:var(--gold-soft);text-decoration:underline;">` +
+          (isArabic ? 'اضغط هنا لإرسال الرسالة عبر واتساب' : 'Click here to send via WhatsApp') +
+          '</a>';
+        status.className = 'form-status err';
+      } else {
+        status.textContent = isArabic
+          ? 'جاري فتح واتساب لإرسال رسالتك...'
+          : 'Opening WhatsApp to send your message…';
+        status.className = 'form-status ok';
+      }
     });
   }
 });
