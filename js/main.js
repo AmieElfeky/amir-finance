@@ -1,23 +1,24 @@
 
-
+ 
+ 
 /* =========================================================
 AMIR ELFEKY — site interactions
 ========================================================= */
-
+ 
 document.addEventListener('DOMContentLoaded', () => {
-
+ 
 // Confirm JS is running before enabling any hide-then-reveal animation.
 // Until this class is present, .reveal / .seal-stamp stay visible via
 // plain CSS — so content can never get stuck invisible on a slow or
 // flaky mobile connection.
 document.documentElement.classList.add('js-ready');
-
+ 
 // Footer year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
-
+ 
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+ 
 // Scroll progress bar
 const progress = document.getElementById('scrollProgress');
 if (progress) {
@@ -29,7 +30,7 @@ progress.style.width = scrolled + '%';
 window.addEventListener('scroll', updateProgress, { passive: true });
 updateProgress();
 }
-
+ 
 // Generic scroll-reveal for any element with .reveal or .seal-stamp.
 // Mobile fix: tall sections on narrow/short viewports could fail to ever
 // reach the old 18% visibility threshold, leaving content permanently
@@ -47,7 +48,7 @@ revealIO.unobserve(entry.target);
 });
 }, { threshold: 0.01, rootMargin: '0px 0px -5% 0px' });
 revealEls.forEach(el => revealIO.observe(el));
-
+ 
 // Safety net: guarantee visibility even if the observer never fires
 // (e.g. unusual viewport sizes, fast navigation, edge-case browsers)
 window.setTimeout(() => {
@@ -56,7 +57,7 @@ revealEls.forEach(el => el.classList.add('is-visible'));
 } else {
 revealEls.forEach(el => el.classList.add('is-visible'));
 }
-
+ 
 // KPI bars fill to their data-width when scrolled into view
 const kpiBars = document.querySelectorAll('.kpi-card .bar span[data-width]');
 if (kpiBars.length) {
@@ -72,7 +73,7 @@ kpiBars.forEach(b => kpiIO.observe(b));
 kpiBars.forEach(b => b.style.width = b.dataset.width + '%');
 }
 }
-
+ 
 // Scrollspy: highlight the nav link for the section currently in view
 const navLinks = document.querySelectorAll('.navigation a[href^="#"]');
 const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
@@ -90,7 +91,7 @@ link.setAttribute('aria-current', 'true');
 }, { rootMargin: '-45% 0px -45% 0px' });
 sections.forEach(s => spyIO.observe(s));
 }
-
+ 
 // Staggered hero entrance for a smoother first-load feel
 const heroEntrance = document.querySelectorAll('.hero-content > *');
 if (heroEntrance.length && !prefersReduced) {
@@ -104,12 +105,12 @@ requestAnimationFrame(() => requestAnimationFrame(() => {
 heroEntrance.forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
 }));
 }
-
+ 
 // Animated counters — supports integers, decimals, and custom suffixes.
 // Hero counters fire immediately (above the fold).
 // Platform KPI counters fire when scrolled into view.
 const counters = document.querySelectorAll('[data-count]');
-
+ 
 const animateCounter = (el) => {
 const target = parseFloat(el.dataset.count);
 const suffix = el.dataset.suffix || '';
@@ -129,10 +130,10 @@ else el.textContent = prefix + target.toFixed(decimals) + suffix;
 };
 requestAnimationFrame(step);
 };
-
+ 
 // Hero counters: fire immediately (they're above the fold)
 document.querySelectorAll('.hero [data-count]').forEach(c => animateCounter(c));
-
+ 
 // All other counters: fire when scrolled into view
 const scrollCounters = document.querySelectorAll('[data-count]:not(.hero [data-count])');
 if ('IntersectionObserver' in window && scrollCounters.length) {
@@ -145,7 +146,7 @@ scrollCounters.forEach(c => cntIO.observe(c));
 } else {
 scrollCounters.forEach(c => animateCounter(c));
 }
-
+ 
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navigation = document.querySelector('.navigation');
@@ -164,7 +165,7 @@ navigation.style.padding = '16px 28px';
 navigation.style.borderTop = '1px solid var(--line)';
 navToggle.setAttribute('aria-expanded', String(!isOpen));
 });
-
+ 
 // Close mobile menu after a link is tapped
 navigation.querySelectorAll('a').forEach(link => {
 link.addEventListener('click', () => {
@@ -176,12 +177,12 @@ navToggle.setAttribute('aria-expanded', 'false');
 });
 });
 }
-
+ 
 // Contact form → WhatsApp redirect
 // Builds a pre-filled message from the form fields and opens WhatsApp directly.
 const WA_NUMBER = '201015555880';
 const isArabic = document.documentElement.lang === 'ar';
-
+ 
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
 if (form && status) {
@@ -191,7 +192,7 @@ const name = form.name.value.trim();
 const email = form.email.value.trim();
 const message = form.message.value.trim();
 const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
+ 
 if (!name || !emailOk || !message) {
 status.textContent = isArabic
 ? 'من فضلك أدخل اسمك وبريدك الإلكتروني الصحيح ورسالتك.'
@@ -199,14 +200,14 @@ status.textContent = isArabic
 status.className = 'form-status err';
 return;
 }
-
+ 
 const waText = isArabic
 ? `مرحبًا،\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\n\nالرسالة:\n${message}`
 : `Hello,\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-
+ 
 const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`;
 const newTab = window.open(waUrl, '_blank');
-
+ 
 if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
 // Popup was blocked by the browser — fall back to same-tab navigation
 // and show a manual link so the message is never lost.
