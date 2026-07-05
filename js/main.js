@@ -1,4 +1,5 @@
 
+ 
 /* =========================================================
    AMIR ELFEKY — site interactions
    ========================================================= */
@@ -107,9 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Animated counters — supports integers, decimals, and custom suffixes.
   // Hero counters fire immediately (above the fold).
   // Platform KPI counters fire when scrolled into view.
-  const counters = document.querySelectorAll('[data-count]');
- 
   const animateCounter = (el) => {
+    if (el.dataset.counted === 'true') return;
+    el.dataset.counted = 'true';
     const target   = parseFloat(el.dataset.count);
     const suffix   = el.dataset.suffix   || '';
     const prefix   = el.dataset.prefix   || '';
@@ -129,6 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   };
  
+  const allCounters = document.querySelectorAll('[data-count]');
+ 
   // Hero counters: fire immediately (they're above the fold)
   document.querySelectorAll('.hero [data-count]').forEach(c => animateCounter(c));
  
@@ -139,11 +142,18 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) { animateCounter(entry.target); cntIO.unobserve(entry.target); }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
     scrollCounters.forEach(c => cntIO.observe(c));
   } else {
     scrollCounters.forEach(c => animateCounter(c));
   }
+ 
+  // Safety net: no counter can ever stay stuck at its default HTML value.
+  // Force-resolve anything left unanimated after 2 seconds, regardless of
+  // why the observer didn't fire (edge-case timing, anchor-link jumps, etc).
+  window.setTimeout(() => {
+    allCounters.forEach(c => animateCounter(c));
+  }, 2000);
  
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
