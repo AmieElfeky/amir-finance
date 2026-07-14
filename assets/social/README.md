@@ -1,1 +1,2 @@
-Social sharing images for Facebook, LinkedIn and WhatsApp.
+og-en.jpg
+og-ar.jpg
