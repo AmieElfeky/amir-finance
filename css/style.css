@@ -596,7 +596,12 @@ on the English (LTR) version.
 [dir="rtl"] .timeline li:last-child{ border-left:none; }
 [dir="rtl"] .owner-row > div:first-child{ border-right:none; border-left:1px solid var(--line); }
 [dir="rtl"] .ind-row > div:first-child{ border-right:none; border-left:1px solid var(--line); }
-[dir="rtl"] .ledger-row{ direction:ltr; } /* financial figures stay LTR for numeral consistency */
+[dir="rtl"] .ledger-row{
+    direction:ltr;
+    max-width:100%;
+    overflow:hidden;
+} /* financial figures stay LTR for numeral consistency */
+
 [dir="rtl"] .ledger-row .label{ direction:rtl; text-align:right; }
 [dir="rtl"] .process-row{ grid-template-columns:90px 1fr 1.4fr; }
 [dir="rtl"] .case-studies li::before, [dir="rtl"] .platform-list li::before{ content:"—"; }
