@@ -717,4 +717,26 @@ ANIMATED KPI NUMBERS (platform section)
 /* =========================================================
 MOBILE RESPONSIVE — new elements
 ========================================================= */
+/* =========================================================
+CONTENT VISIBILITY (Performance)
+========================================================= */
+
+@supports (content-visibility:auto){
+
+.services,
+.executive-story,
+.owner-lens,
+.platform,
+.credentials,
+.process,
+.client-value,
+.engagements,
+.insights,
+.contact,
+.footer{
+    content-visibility:auto;
+    contain-intrinsic-size:800px;
+}
+
+}
  
