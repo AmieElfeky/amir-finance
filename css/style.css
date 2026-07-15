@@ -189,15 +189,17 @@ opacity:.5; pointer-events:none;
 .hero-grid{
     position:relative;
     display:grid;
-    grid-template-columns:1.1fr 0.9fr;
+    grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
     gap:64px;
     align-items:center;
-
     min-width:0;
 }
 
 .hero-grid > *{
     min-width:0;
+}
+.hero-grid > *{
+    overflow-wrap:break-word;
 }
 .hero-badge{
 font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
@@ -253,7 +255,11 @@ transition:background .2s ease;
 .delta.up{ color:var(--ledger-green); background:rgba(60,122,94,0.12); }
 .delta.watch{ color:var(--ledger-red); background:rgba(154,75,63,0.12); }
 .ledger-foot{ display:flex; justify-content:space-between; padding:16px 24px; font-family:var(--mono); font-size:11px; color:var(--text-on-paper-dim); border-top:1px solid var(--line-dark); }
- 
+ .hero-dashboard{
+    width:100%;
+    min-width:0;
+  max-width:100%;
+}
 /* ===== SECTION SHELL ===== */
 section{ padding:88px 0; }
 .section-head{ max-width:640px; margin-bottom:56px; }
@@ -563,11 +569,7 @@ color:var(--gold-soft) !important;
 .hero-metrics{ gap:24px; }
 .hero::before{ background:none; } /* repeating gradient is a needless paint cost on small screens */
 .hero{ padding:64px 0 56px; }
-    .hero-dashboard{
-        width:100%;
-        min-width:0;
-    }
-
+  
     section{ padding:60px 0; }
 }
  
