@@ -482,14 +482,7 @@ background-attachment:fixed;
 @media (max-width:900px){ .cta-band{ background-attachment:scroll; padding:80px 0; } }
  
 /* ===== WHATSAPP FLOATING BUTTON ===== */
-.wa-float{
-position:fixed; bottom:28px; right:28px; z-index:90;
-width:58px; height:58px; border-radius:50%;
-background:#25D366; color:#fff; text-decoration:none;
-display:flex; align-items:center; justify-content:center;
-box-shadow:0 4px 20px rgba(37,211,102,0.45);
-transition:transform .25s ease, box-shadow .25s ease;
-}
+
 .wa-float:hover{ transform:scale(1.12); box-shadow:0 6px 30px rgba(37,211,102,0.6); }
 .wa-float svg{ width:30px; height:30px; fill:currentColor; }
 .wa-float .wa-tooltip{
@@ -499,9 +492,8 @@ padding:7px 12px; border-radius:999px; white-space:nowrap; border:1px solid var(
 opacity:0; pointer-events:none; transition:opacity .2s ease;
 }
 .wa-float:hover .wa-tooltip{ opacity:1; }
-[dir="rtl"] .wa-float{ right:auto; left:28px; }
-[dir="rtl"] .wa-float .wa-tooltip{ right:auto; left:68px; }
-@media (max-width:600px){ .wa-float{ bottom:20px; right:16px; width:52px; height:52px; } [dir="rtl"] .wa-float{ right:auto; left:16px; } }
+
+
  
 /* ===== CONTACT ===== */
 .contact{ position:relative; }
@@ -599,7 +591,12 @@ on the English (LTR) version.
 [dir="rtl"] .ledger-row{
     direction:ltr;
     max-width:100%;
-    overflow:hidden;
+    min-width:0;
+}
+
+[dir="rtl"] .ledger-row > *{
+    min-width:0;
+}
 } /* financial figures stay LTR for numeral consistency */
 
 [dir="rtl"] .ledger-row .label{ direction:rtl; text-align:right; }
