@@ -501,8 +501,21 @@ opacity:0; pointer-events:none; transition:opacity .2s ease;
 .contact-lead{ color:var(--text-on-ink-dim); margin-top:16px; font-size:16px; }
 .contact-info{ margin-top:28px; display:grid; gap:14px; font-size:14.5px; }
 .contact-info p{ margin:0; color:var(--text-on-ink-dim); }
-.contact-info a{ color:var(--text-on-ink); text-decoration:none; border-bottom:1px solid var(--line); }
-.contact-info a:hover{ border-color:var(--gold); }
+.contact-info a{
+    color:var(--text-on-ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+}
+
+.phone-number{
+    direction:ltr;
+    unicode-bidi:isolate;
+    display:inline-block;
+}
+
+.contact-info a:hover{
+    border-color:var(--gold);
+}
  
 .contact-form{ display:grid; gap:18px; }
 .form-group{ display:grid; gap:8px; }
