@@ -454,7 +454,6 @@ color:var(--text-on-ink-dim); margin-top:12px;
 .insights{ background:var(--paper); color:var(--text-on-paper); }
 .insights .eyebrow{ color:var(--ledger-green); }
 .insights .eyebrow::before{ background:var(--ledger-green); }
-.insights-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); margin-bottom:28px; }
 .insight-card{ background:var(--paper); overflow:hidden; transition:transform .25s ease, background .25s ease; display:flex; flex-direction:column; }
 .insight-card:hover{ transform:translateY(-3px); background:#FBFAF6; }
 .insight-img{ width:100%; height:190px; object-fit:cover; display:block; filter:saturate(0.88) contrast(1.04); }
