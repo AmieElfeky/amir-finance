@@ -563,7 +563,12 @@ color:var(--gold-soft) !important;
 .hero-metrics{ gap:24px; }
 .hero::before{ background:none; } /* repeating gradient is a needless paint cost on small screens */
 .hero{ padding:64px 0 56px; }
-section{ padding:60px 0; }
+    .hero-dashboard{
+        width:100%;
+        min-width:0;
+    }
+
+    section{ padding:60px 0; }
 }
  
 /* Touch devices: hover-only lift/shine effects add no value and can feel
