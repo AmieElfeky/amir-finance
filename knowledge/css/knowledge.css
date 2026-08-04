@@ -149,13 +149,13 @@ body{
 ========================================================== */
 
 
-header{
+.knowledge-header{
 
     background:
     linear-gradient(
-    135deg,
-    var(--aif-navy),
-    var(--aif-blue)
+        135deg,
+        var(--aif-navy),
+        var(--aif-blue)
     );
 
     color:var(--text-light);
@@ -224,6 +224,146 @@ header p{
     letter-spacing:1px;
 
     margin-bottom:25px;
+
+}
+/* ==========================================================
+   Featured Publication
+========================================================== */
+
+.featured-publication{
+
+    margin:70px 0;
+
+}
+
+
+.featured-content{
+
+    display:grid;
+
+    grid-template-columns:1.6fr 0.9fr;
+
+    gap:50px;
+
+    align-items:center;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border-light);
+
+    border-radius:var(--radius-lg);
+
+    padding:45px;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+
+.publication-badge{
+
+    display:inline-block;
+
+    background:rgba(201,162,39,.12);
+
+    color:var(--aif-gold);
+
+    border:1px solid var(--aif-gold);
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+
+.featured-text h2{
+
+    margin:0;
+
+    color:var(--aif-navy);
+
+    font-size:42px;
+
+    font-weight:800;
+
+}
+
+
+.featured-text h3{
+
+    margin:15px 0;
+
+    color:var(--text-primary);
+
+    font-size:28px;
+
+}
+
+
+.featured-text p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+
+.feature-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+
+.feature-list span{
+
+    background:#F3F6FA;
+
+    border:1px solid var(--border-light);
+
+    padding:10px 16px;
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+.featured-cover{
+
+    text-align:center;
+
+}
+
+
+.featured-cover img{
+
+    width:100%;
+
+    max-width:260px;
+
+    height:auto;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-lg);
 
 }
 
