@@ -191,3 +191,40 @@ header p{
     font-weight:500;
 
 }
+/* ==========================================================
+   Knowledge Header Elements
+========================================================== */
+
+
+.knowledge-header .container{
+
+    padding:20px;
+
+}
+
+
+.platform-badge{
+
+    display:inline-block;
+
+    background:rgba(201,162,39,.15);
+
+    color:var(--aif-gold);
+
+    border:1px solid var(--aif-gold);
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:25px;
+
+}
+
+
