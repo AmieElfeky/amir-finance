@@ -117,12 +117,18 @@ body{
 
 
 .executive-banner{
+   
 
     background:var(--aif-gold);
 
     text-align:center;
 
     padding:18px 0;
+
+}
+.executive-banner .container{
+
+    padding:0;
 
 }
 
