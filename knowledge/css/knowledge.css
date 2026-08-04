@@ -365,5 +365,20 @@ body{
     box-shadow:var(--shadow-lg);
 
 }
+/* ==========================================================
+   Section Titles
+========================================================== */
+
+.section-title{
+
+    font-size:32px;
+
+    color:var(--aif-navy);
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
 
 
