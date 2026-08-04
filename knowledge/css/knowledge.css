@@ -416,4 +416,25 @@ body{
     margin-bottom:40px;
 
 }
+/* ==========================================================
+   Knowledge Overview Cards
+========================================================== */
+
+.overview-card{
+
+    flex:1;
+
+    min-width:220px;
+
+    background:var(--bg-card);
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:var(--shadow-md);
+
+    text-align:center;
+
+}
 
