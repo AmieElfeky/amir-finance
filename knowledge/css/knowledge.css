@@ -645,4 +645,15 @@ img{
 /* ==========================================================
    Responsive Design
 ========================================================== */
+@media (max-width:992px){
+
+    .featured-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+}
 
