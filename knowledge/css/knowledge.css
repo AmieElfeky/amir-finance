@@ -422,7 +422,6 @@ body{
 
 .overview-card{
 
-    flex:1;
 
     min-width:220px;
 
@@ -600,5 +599,20 @@ img{
 .grid-4{
 
     grid-template-columns:repeat(4,1fr);
+
+}
+/* ==========================================================
+   Knowledge Overview
+========================================================== */
+
+.overview-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
 
 }
