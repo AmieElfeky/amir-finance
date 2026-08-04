@@ -792,6 +792,74 @@ img{
 
 }
 /* ==========================================================
+   Standard Actions
+========================================================== */
+
+.standard-actions{
+
+    display:flex;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.standard-actions a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:12px 22px;
+
+    border-radius:var(--radius-md);
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    font-size:14px;
+
+    transition:.3s ease;
+
+}
+.standard-actions .primary{
+
+    background:var(--aif-navy);
+
+    color:var(--aif-white);
+
+}
+
+
+.standard-actions .primary:hover{
+
+    background:var(--aif-blue);
+
+    transform:translateY(-2px);
+
+}
+.standard-actions .secondary{
+
+    background:var(--aif-gold);
+
+    color:#111;
+
+}
+
+
+.standard-actions .secondary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-sm);
+
+}
+/* ==========================================================
    Responsive Design
 ========================================================== */
 @media (max-width:992px){
