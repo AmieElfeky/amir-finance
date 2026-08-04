@@ -125,9 +125,9 @@ body{
 
 .container{
 
-    max-width:1200px;
+    width:min(1200px,92%);
     margin:auto;
-    padding:50px;
+    padding:50px 0;
 
 }
 /* ==========================================================
@@ -541,3 +541,36 @@ body{
     box-shadow:var(--shadow-sm);
 
 }
+/* ==========================================================
+   Knowledge Card
+========================================================== */
+
+.knowledge-card{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border-light);
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:.3s ease;
+
+}
+
+.knowledge-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+img{
+
+    display:block;
+    max-width:100%;
+    height:auto;
+
+}
+
