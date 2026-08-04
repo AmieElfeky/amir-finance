@@ -618,5 +618,31 @@ img{
 
 }
 /* ==========================================================
+   Overview Card Typography
+========================================================== */
+
+.overview-card h1{
+
+    color:var(--aif-navy);
+
+    font-size:48px;
+
+    margin:0;
+
+    font-weight:800;
+
+}
+
+.overview-card p{
+
+    margin-top:12px;
+
+    font-size:18px;
+
+    color:var(--text-secondary);
+
+}
+/* ==========================================================
    Responsive Design
 ========================================================== */
+
