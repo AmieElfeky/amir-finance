@@ -757,7 +757,40 @@ img{
     margin-bottom:20px;
 
 }
+/* ==========================================================
+   Standard Meta
+========================================================== */
 
+.standard-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+
+.standard-meta span{
+
+    background:#F3F6FA;
+
+    color:var(--aif-navy);
+
+    border:1px solid var(--border-light);
+
+    padding:7px 14px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
 /* ==========================================================
    Responsive Design
 ========================================================== */
