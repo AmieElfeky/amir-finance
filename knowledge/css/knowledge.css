@@ -664,7 +664,7 @@ img{
    Standard Card
 ========================================================== */
 
-.standard-card{
+standard-card{
 
     background:var(--bg-card);
 
@@ -676,7 +676,16 @@ img{
 
     box-shadow:var(--shadow-sm);
 
-    transition:all .35s ease;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+.standard-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
 
 }
 /* ==========================================================
