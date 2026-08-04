@@ -690,6 +690,33 @@ img{
 
 }
 /* ==========================================================
+   Standard Cover
+========================================================== */
+
+.standard-cover{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--bg-main);
+
+}
+
+.standard-cover img{
+
+    display:block;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    transition:transform .4s ease;
+
+}
+/* ==========================================================
    Responsive Design
 ========================================================== */
 @media (max-width:992px){
@@ -701,6 +728,7 @@ img{
         text-align:center;
 
     }
+   
    .knowledge-header h1{
 
     font-size:34px;
