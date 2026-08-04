@@ -661,6 +661,25 @@ img{
 
 }
 /* ==========================================================
+   Standard Card
+========================================================== */
+
+.standard-card{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border-light);
+
+    border-radius:var(--radius-lg);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:all .35s ease;
+
+}
+/* ==========================================================
    Responsive Design
 ========================================================== */
 @media (max-width:992px){
