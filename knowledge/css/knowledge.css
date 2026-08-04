@@ -437,4 +437,37 @@ body{
     text-align:center;
 
 }
+/* ==========================================================
+   Publication Meta
+========================================================== */
+
+.publication-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin:18px 0 25px;
+
+}
+
+.publication-meta span{
+
+    background:#F3F6FA;
+
+    color:var(--text-primary);
+
+    border:1px solid var(--border-light);
+
+    padding:8px 14px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
 
