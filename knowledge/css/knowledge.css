@@ -111,3 +111,30 @@ body{
     padding:50px;
 
 }
+/* ==========================================================
+   Executive Banner
+========================================================== */
+
+
+.executive-banner{
+
+    background:var(--aif-gold);
+
+    text-align:center;
+
+    padding:18px 0;
+
+}
+
+
+.executive-banner-title{
+
+    margin:0;
+
+    color:#222;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
