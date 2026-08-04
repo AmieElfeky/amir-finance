@@ -167,7 +167,7 @@ body{
 }
 
 
-header h1{
+.knowledge-header h1{
 
     margin:0;
 
@@ -179,8 +179,7 @@ header h1{
 
 }
 
-
-header p{
+.knowledge-header p{
 
     margin-top:18px;
 
