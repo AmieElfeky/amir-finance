@@ -144,3 +144,50 @@ body{
     font-weight:700;
 
 }
+/* ==========================================================
+   AIF Executive Header
+========================================================== */
+
+
+header{
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--aif-navy),
+    var(--aif-blue)
+    );
+
+    color:var(--text-light);
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+
+header h1{
+
+    margin:0;
+
+    font-size:42px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+}
+
+
+header p{
+
+    margin-top:18px;
+
+    font-size:20px;
+
+    color:var(--aif-platinum);
+
+    font-weight:500;
+
+}
