@@ -183,7 +183,6 @@ body{
 
 }
 
-
 .knowledge-header h1{
 
     margin:0;
@@ -643,6 +642,25 @@ img{
 
 }
 /* ==========================================================
+   Knowledge Library
+========================================================== */
+
+.knowledge-library{
+
+    margin:80px 0;
+
+}
+
+.library-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:30px;
+
+}
+/* ==========================================================
    Responsive Design
 ========================================================== */
 @media (max-width:992px){
@@ -673,6 +691,7 @@ img{
 }
 
 }
+
 @media (max-width:768px){
 
     .container{
