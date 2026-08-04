@@ -119,8 +119,6 @@ body{
 
     -webkit-font-smoothing:antialiased;
 
-    margin:0;
-
 }
 
 .container{
@@ -565,6 +563,9 @@ body{
     box-shadow:var(--shadow-lg);
 
 }
+/* ==========================================================
+   Responsive Images
+========================================================== */
 img{
 
     display:block;
