@@ -7,21 +7,98 @@
 
 /* ---------- Global ---------- */
 
+/* ==========================================================
+   AIF™ EXECUTIVE KNOWLEDGE PLATFORM
+   DESIGN SYSTEM V1.0
+========================================================== */
+
 :root{
 
-    --primary:#4b2e83;
-    --gold:#d4af37;
-    --bg:#f5f7fb;
-    --white:#ffffff;
-    --text:#555;
-    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    /* Brand Identity */
+
+    --aif-navy:#0B1F3A;
+
+    --aif-blue:#163A63;
+
+    --aif-gold:#C9A227;
+
+    --aif-platinum:#E5E7EB;
+
+    --aif-white:#FFFFFF;
+
+
+
+    /* Background */
+
+    --bg-main:#F6F8FC;
+
+    --bg-card:#FFFFFF;
+
+    --bg-dark:#081525;
+
+
+
+    /* Typography */
+
+    --text-primary:#17202A;
+
+    --text-secondary:#5B6573;
+
+    --text-light:#FFFFFF;
+
+
+
+    /* Borders */
+
+    --border-light:#E6EAF0;
+
+
+
+    /* Shadows */
+
+    --shadow-sm:
+    0 4px 12px rgba(0,0,0,.06);
+
+
+    --shadow-md:
+    0 10px 30px rgba(0,0,0,.10);
+
+
+    --shadow-lg:
+    0 20px 50px rgba(0,0,0,.15);
+
+
+
+    /* Radius */
+
+    --radius-sm:8px;
+
+    --radius-md:16px;
+
+    --radius-lg:24px;
+
+
+
+    /* Spacing */
+
+    --space-1:8px;
+
+    --space-2:16px;
+
+    --space-3:24px;
+
+    --space-4:40px;
+
+    --space-5:60px;
+
 
 }
 
 body{
 
     font-family:Arial,sans-serif;
-    background:var(--bg);
+   background:var(--bg-main);
     margin:0;
     padding:0;
 
