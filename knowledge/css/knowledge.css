@@ -664,7 +664,7 @@ img{
    Standard Card
 ========================================================== */
 
-standard-card{
+.standard-card{
 
     background:var(--bg-card);
 
@@ -681,6 +681,7 @@ standard-card{
         box-shadow .35s ease;
 
 }
+
 .standard-card:hover{
 
     transform:translateY(-8px);
