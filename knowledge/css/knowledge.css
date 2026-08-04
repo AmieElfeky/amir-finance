@@ -1,1 +1,36 @@
-/* AIF Professional Knowledge Center Styles */
+/* ==========================================================
+   AIF Professional Knowledge Center
+   Executive Operating System
+   Version: 1.0
+   Author: Amir ElFeky
+========================================================== */
+
+/* ---------- Global ---------- */
+
+:root{
+
+    --primary:#4b2e83;
+    --gold:#d4af37;
+    --bg:#f5f7fb;
+    --white:#ffffff;
+    --text:#555;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+body{
+
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    margin:0;
+    padding:0;
+
+}
+
+.container{
+
+    max-width:1200px;
+    margin:auto;
+    padding:50px;
+
+}
