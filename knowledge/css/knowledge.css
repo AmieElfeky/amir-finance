@@ -367,10 +367,15 @@ body{
 
 .featured-cover{
 
-    text-align:center;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding-top:8px;
 
 }
-
 
 .featured-cover img{
 
