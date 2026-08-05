@@ -715,18 +715,20 @@ img{
 
     width:100%;
 
-    aspect-ratio: 3 / 2;
+    aspect-ratio:4/3;
 
     object-fit:cover;
 
-    transition:transform .4s ease;
+    object-position:center;
 
-   will-change:transform;
+    transition:transform .45s ease;
+
+    will-change:transform;
 
 }
 .standard-card:hover .standard-cover img{
 
-    transform:scale(1.05);
+    transform:scale(1.03);
 
 }
 /* ==========================================================
