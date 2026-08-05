@@ -780,9 +780,11 @@ img{
 
     color:var(--text-secondary);
 
-    font-size:16px;
+    font-size:15px;
 
-    line-height:1.8;
+    line-height:1.7;
+
+    min-height:80px;
 
     margin-bottom:20px;
 
