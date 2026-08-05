@@ -670,7 +670,7 @@ img{
 
     display:grid;
 
-   grid-template-columns:repeat(auto-fit,minmax(240px,280px));
+   grid-template-columns:repeat(auto-fit,minmax(230px,260px));
 
     justify-content:center;
 
