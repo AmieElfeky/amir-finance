@@ -1252,3 +1252,58 @@ Responsive - Knowledge Library
     box-shadow:var(--shadow-sm);
 
 }
+/* ==========================================================
+   Standard Status Badge
+========================================================== */
+
+.standard-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin:18px 18px 0;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+}
+
+.standard-status.published{
+
+    background:#E8F7EE;
+
+    color:#15803D;
+
+    border:1px solid #B7E4C7;
+
+}
+
+.standard-status.updated{
+
+    background:#E8F1FF;
+
+    color:#1D4ED8;
+
+    border:1px solid #BFDBFE;
+
+}
+
+.standard-status.coming{
+
+    background:#FFF7E6;
+
+    color:#B45309;
+
+    border:1px solid #FCD34D;
+
+}
