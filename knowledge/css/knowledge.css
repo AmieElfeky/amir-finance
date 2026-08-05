@@ -693,9 +693,10 @@ img{
 
     box-shadow:var(--shadow-sm);
 
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+   transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
 
 }
 
@@ -704,6 +705,8 @@ img{
     transform:translateY(-8px);
 
     box-shadow:var(--shadow-lg);
+
+   border-color:#D8E4F2;
 
 }
 /* ==========================================================
