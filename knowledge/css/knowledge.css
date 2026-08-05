@@ -256,9 +256,9 @@ body{
 
     display:grid;
 
-    grid-template-columns:1.6fr 0.9fr;
+    grid-template-columns:minmax(0,1.35fr) 320px;
 
-    gap:50px;
+    gap:36px;
 
     align-items:center;
 
@@ -268,9 +268,13 @@ body{
 
     border-radius:var(--radius-lg);
 
-    padding:45px;
+    padding:32px 36px;
 
     box-shadow:var(--shadow-md);
+
+    max-width:1180px;
+
+    margin:auto;
 
 }
 
