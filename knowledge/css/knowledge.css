@@ -1040,5 +1040,105 @@ img{
 
     margin-top:50px;
 
+    margin-bottom:80px;
+
+}
+/*==========================================================
+Knowledge Library Overview
+==========================================================*/
+
+.library-overview{
+
+    margin-top:80px;
+
+}
+
+.library-overview-text{
+
+    max-width:900px;
+
+    margin:18px auto 50px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:var(--text-secondary);
+
+}
+
+.library-overview-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:40px;
+
+}
+
+.overview-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+}
+
+.overview-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 30px 70px rgba(0,0,0,.12);
+
+}
+
+.overview-number{
+
+    font-size:72px;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+    line-height:1;
+
+    margin-bottom:18px;
+
+}
+
+.overview-card p{
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:var(--text-main);
+
+}
+/*==========================================================
+Responsive - Knowledge Library
+==========================================================*/
+
+@media (max-width:992px){
+
+    .library-overview-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
 }
 
