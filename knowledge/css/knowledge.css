@@ -670,11 +670,11 @@ img{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,320px);
+   grid-template-columns:repeat(auto-fit,minmax(240px,280px));
 
     justify-content:center;
 
-    gap:32px;
+    gap:24px;
 
 }
 /* ==========================================================
