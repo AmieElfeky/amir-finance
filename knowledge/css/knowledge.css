@@ -620,25 +620,31 @@ img{
    Overview Card Typography
 ========================================================== */
 
-.overview-card h1{
+.overview-number{
 
     color:var(--aif-navy);
 
-    font-size:48px;
+    font-size:52px;
 
-    margin:0;
+   letter-spacing:-0.5px;
 
     font-weight:800;
+
+    line-height:1;
+
+    margin-bottom:12px;
 
 }
 
 .overview-card p{
 
-    margin-top:12px;
+    margin:0;
 
     font-size:18px;
 
     color:var(--text-secondary);
+
+    font-weight:600;
 
 }
 /* ==========================================================
