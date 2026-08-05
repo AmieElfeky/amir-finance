@@ -718,6 +718,8 @@ img{
 
     background:var(--bg-main);
 
+   border-bottom:1px solid var(--border-light);
+
 }
 
 .standard-cover img{
@@ -732,7 +734,7 @@ img{
 
     object-position:center;
 
-    transition:transform .45s ease;
+   transition:transform .5s ease;
 
     will-change:transform;
 
