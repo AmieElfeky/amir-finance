@@ -1143,4 +1143,38 @@ Responsive - Knowledge Library
     }
 
 }
+/* ==========================================================
+   Standard Card Action Link
+========================================================== */
+
+.standard-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:10px;
+
+    color:var(--aif-blue);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+
+}
+
+
+.standard-link:hover{
+
+    transform:translateX(4px);
+
+    color:var(--aif-navy);
+
+}
 
