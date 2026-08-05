@@ -1024,3 +1024,21 @@ img{
     border-color:var(--primary);
 
 }
+/* ==========================================================
+   Library Layout
+========================================================== */
+
+.library-layout{
+
+    display:grid;
+
+    grid-template-columns:320px 1fr 260px;
+
+    gap:48px;
+
+    align-items:start;
+
+    margin-top:50px;
+
+}
+
