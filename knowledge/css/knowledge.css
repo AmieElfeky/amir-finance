@@ -1177,4 +1177,78 @@ Responsive - Knowledge Library
     color:var(--aif-navy);
 
 }
+/* ==========================================================
+   Standard Download Area
+========================================================== */
 
+.standard-download{
+
+    margin-top:25px;
+
+    padding-top:20px;
+
+    border-top:1px solid var(--border-light);
+
+}
+
+
+.download-label{
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:var(--text-secondary);
+
+    margin-bottom:12px;
+
+}
+
+
+.download-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.download-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+
+}
+
+
+.download-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-sm);
+
+}
